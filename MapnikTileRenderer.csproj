@@ -1,0 +1,212 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1025957F-CC19-43DE-B9E8-BE0CEDC0604B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MapnikTileRenderer</RootNamespace>
+    <AssemblyName>MapnikTileRenderer</AssemblyName>
+    <ApplicationIcon>Compass.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FreeImageNET, Version=3.15.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\FreeImageNET.dll</HintPath>
+    </Reference>
+    <Reference Include="ImDiskNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=69215e034751fde4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\ImDiskNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Magick.NET-Q8-AnyCPU, Version=7.0.0.0, Culture=neutral, PublicKeyToken=2004825badfa91ec, processorArchitecture=MSIL" />
+    <Reference Include="MapnikCs, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\MapnikCs.dll</HintPath>
+    </Reference>
+    <Reference Include="NaviMapNet, Version=1.0.5778.15164, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>NaviMapNet\bin\Debug\NaviMapNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BrowseTileFolder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BrowseTileFolder.Designer.cs">
+      <DependentUpon>BrowseTileFolder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CopyFiles.cs" />
+    <Compile Include="CreateCMD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateCMD.Designer.cs">
+      <DependentUpon>CreateCMD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DIA_CopyFiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DIA_CopyFiles.Designer.cs">
+      <DependentUpon>DIA_CopyFiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FastDirectoryEnumerator.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppStart.cs" />
+    <Compile Include="PolyCreatorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PolyCreatorForm.designer.cs">
+      <DependentUpon>PolyCreatorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PolyLineBuffer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BrowseTileFolder.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>BrowseTileFolder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateCMD.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CreateCMD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DIA_CopyFiles.resx">
+      <DependentUpon>DIA_CopyFiles.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PolyCreatorForm.resx">
+      <DependentUpon>PolyCreatorForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StopProcessDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>StopProcessDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransfXYLL.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TransfXYLL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisualizeMap.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>VisualizeMap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WHZ.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>WHZ.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="StopProcessDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StopProcessDialog.Designer.cs">
+      <DependentUpon>StopProcessDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TileRendering.cs" />
+    <Compile Include="SambaNetwork.cs" />
+    <Compile Include="TransfXYLL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransfXYLL.Designer.cs">
+      <DependentUpon>TransfXYLL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VisualizeMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisualizeMap.Designer.cs">
+      <DependentUpon>VisualizeMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WHZ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WHZ.Designer.cs">
+      <DependentUpon>WHZ.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="001.png" />
+    <None Include="002.png" />
+    <Content Include="Compass.ico" />
+    <Content Include="FileServer.ico" />
+    <None Include="Resources\protect.ico" />
+    <None Include="Resources\protect_atert.ico" />
+    <None Include="Resources\protect_off.ico" />
+    <None Include="Resources\save as.ico" />
+    <None Include="Resources\Toast.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

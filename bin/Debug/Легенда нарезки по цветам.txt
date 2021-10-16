@@ -1,0 +1,11 @@
+// 0 - no info // White
+// 1 - in queue // Aqua
+// 2 - in work // Yellow
+// 3 - in work, error, repeat // Orange
+// 4 - all done well // Green
+// 5 - done with skipped // LightGreen
+// 6 - done with holes // Orchid
+// 7 - done with skipped and holes // Pink
+// 8 - all skipped // LimeGreen
+// 9 - all holes // Red
+// 10 - ? // Black

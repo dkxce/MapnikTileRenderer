@@ -1,0 +1,1 @@
+mtrc.exe E:\_RENDER_MAP_TILES\LIPETS_20151029_BY_IGOR\Lipetsk_FULL_5_40.mtr_project /server 9666 -task_Lipetsk

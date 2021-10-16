@@ -1,0 +1,5 @@
+C:\PROJECTS\CSharp_Navicom\ADDR_SEARCH\_MAPNIK_TILE_RENDERER\share_folder_creator\obj\Debug\ResolveAssemblyReference.cache
+C:\PROJECTS\CSharp_Navicom\ADDR_SEARCH\_MAPNIK_TILE_RENDERER\bin\Debug\share_folder_creator.exe
+C:\PROJECTS\CSharp_Navicom\ADDR_SEARCH\_MAPNIK_TILE_RENDERER\bin\Debug\share_folder_creator.pdb
+C:\PROJECTS\CSharp_Navicom\ADDR_SEARCH\_MAPNIK_TILE_RENDERER\share_folder_creator\obj\Debug\share_folder_creator.exe
+C:\PROJECTS\CSharp_Navicom\ADDR_SEARCH\_MAPNIK_TILE_RENDERER\share_folder_creator\obj\Debug\share_folder_creator.pdb

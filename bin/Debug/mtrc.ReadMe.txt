@@ -1,0 +1,124 @@
+--------------------------------------------------------------------------------------------------------------------
+-- Standalone (режим консольного приложени€):
+--------------------------------------------------------------------------------------------------------------------
+
+—интаксис:
+
+ >mtrc.exe <project_file_name> [options]
+
+  <project_file_name> - файл проекта нарезки
+
+  опции:
+    -errors - приостанавливать нарезку и выдавать сообщение при возникновении ошибки
+    -err100 - приостанавливать нарезку и выдавать сообщение при возникновении ошибки, когда их число превысит 100
+    -wait   - по завершении не закрывать окно, а ждать подтверждение    
+
+ѕримеры:
+
+  mtrc.exe "proj.mtr_project"
+  mtrc.exe "proj.mtr_project" -errors
+  mtrc.exe "proj.mtr_project" -err100
+  mtrc.exe "proj.mtr_project" -wait
+  mtrc.exe "proj.mtr_project" -wait -errors
+  mtrc.exe "proj.mtr_project" -wait -err100    
+
+--------------------------------------------------------------------------------------------------------------------
+-- Server (режим сервера):
+--------------------------------------------------------------------------------------------------------------------
+
+—интаксис:
+
+ >mtrc.exe <project_file_name> /server port [options]
+ >mtrc.exe <project_file_name> /holeserver port <holes_file> [options]
+ >mtrc.exe <project_file_name> /dumpserver port <dump_file> [options]
+
+  <project_file_name> - файл проекта нарезки
+  /server - запуск в режиме сервера
+  /holeserver - запуск в режиме сервера, нарезка только дыр
+  /dumpserver - запуск в режиме сервера с учетом с учетом сохраненного дампа
+  port - номер порта дл€ подключени€ клиентов
+  <holes_file> - файл с дырками дл€ запуска /holeserver
+  <dump_file> - файл дампа
+  
+  опции:
+      -task_## - уникальный идентификатор задани€ дл€ выполнени€
+                 используетс€ дл€ раздачи заданий только среди требуемых клиентов
+                 с необходимыми настройками
+      -cs - закрывать приложени€ сервера после окончани€ нарезки
+      -cc - закрывать приложени€ клиента после окончани€ нарезки
+      -dump - создавать и хранить информационную матрицу нарезки
+
+ѕримеры:
+
+  mtrc.exe "proj.mtr_project" /server 9666
+  mtrc.exe "proj.mtr_project" /server 9666 -task_01
+  mtrc.exe "proj.mtr_project" /server 9666 -task_01 -cc -cs
+  mtrc.exe "proj.mtr_project" /server 9666 -task_01 -cc -cs
+  mtrc.exe "proj.mtr_project" /server 9666 -cc -cs -dump
+  mtrc.exe "proj.mtr_project" /server 9666 -cs
+
+  mtrc.exe "proj.mtr_project" /holeserver 9666 "inputfile.holes"    
+  mtrc.exe "proj.mtr_project" /holeserver 9666 "inputfile.holes" -task_01
+  mtrc.exe "proj.mtr_project" /holeserver 9666 "inputfile.holes" -task_01 -cc -cs
+  mtrc.exe "proj.mtr_project" /holeserver 9666 "inputfile.holes" -cc -cs
+  mtrc.exe "proj.mtr_project" /holeserver 9666 "inputfile.holes" -cs 
+  
+  mtrc.exe "proj.mtr_project" /dumpserver 9666 "inputfile.dump"    
+  mtrc.exe "proj.mtr_project" /dumpserver 9666 "inputfile.dump" -task_01
+  mtrc.exe "proj.mtr_project" /dumpserver 9666 "inputfile.dump" -task_01 -cc -cs
+  mtrc.exe "proj.mtr_project" /dumpserver 9666 "inputfile.dump" -cc -cs
+  mtrc.exe "proj.mtr_project" /dumpserver 9666 "inputfile.dump" -cs 
+	  
+--------------------------------------------------------------------------------------------------------------------
+-- Client (режим клиента):
+--------------------------------------------------------------------------------------------------------------------
+
+—интаксис:
+
+ >mtrc.exe <project_file_name> /client ip:port [options]
+
+  <project_file_name> - файл проекта нарезки
+  /client - запуск в режиме клиента
+  ip:port - IP-адрес и порт сервера дл€ подключени€ клиентов
+
+  опции:
+      -task_## - уникальный идентификатор задани€ дл€ выполнени€
+                 используетс€ дл€ получени€ задани€ только от сервера
+                 с необходимыми настройками
+      -threads_cn - число потоков нарезки равно числу €дер процессора (cores number)
+      -threads_## - число потоков нарезки (01..32)
+
+ѕримеры:
+
+  mtrc.exe "proj.mtr_project" /client 127.0.0.1:9666
+  mtrc.exe "proj.mtr_project" /client 127.0.0.1:9666 -task_01
+  mtrc.exe "proj.mtr_project" /client 127.0.0.1:9666 -threads_03
+  mtrc.exe "proj.mtr_project" /client 127.0.0.1:9666 -task_01 -threads_cn  
+				
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+-- „тобы запустить несколько нарезок подр€д можно использовать cmd файлы следующего содержани€:
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+
+Ќа сервере (run_server_ABC.cmd):
+
+	mtrc.exe ProjectA.mtr_project /server 9666 -cc -cs -task_A
+	mtrc.exe ProjectB.mtr_project /server 9666 -cc -cs -task_B
+	mtrc.exe ProjectC.mtr_project /server 9666 -cc -cs -task_C
+
+Ќа клиентах (run_client_ABC.cmd):
+
+	mtrc.exe ProjectA.mtr_project /client 127.0.0.1:9666 -task_A
+	mtrc.exe ProjectB.mtr_project /client 127.0.0.1:9666 -task_B
+	mtrc.exe ProjectC.mtr_project /client 127.0.0.1:9666 -task_C
+
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+-- «апуск от имени другого пользовател€:
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+
+        runas /noprofile /env /user:Navicom\ArGIS "mtrc.exe Project.mtr_project /server 9666 -cc -cs"
+
+--------------------------------------------------------------------------------------------------------------------

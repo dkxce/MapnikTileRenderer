@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<app_texts_data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <box>
+    <string>39.6</string>
+    <string>52.616667</string>
+    <string>39.83</string>
+    <string>52.38</string>
+  </box>
+  <size>
+    <unsignedInt>767</unsignedInt>
+    <unsignedInt>568</unsignedInt>
+  </size>
+  <map>C:\Downloads\CD-REC\_MAPNIK_TILE_RENDERER\bin\Debug\maps\nav_maps(33.1).xml</map>
+  <byCenter>false</byCenter>
+  <zoom>10</zoom>
+</app_texts_data>

@@ -1,0 +1,31 @@
+ПАПКИ:
+
+[bsdTAR] - быстрая упаковка\распаковка огромного количества файлов+папок без претензий к памяти
+[data_sources] - библиотеки с источниками данных для mapnik
+[fonts] - шрифты для mapnik
+[httpClient] - монотайловый и мультитайловый браузерный клиент для `MapnikSimpleMapViewer.exe` (Simple WMS HTTP Server)
+[LOGS] - логи нарезки
+[plugins] - плагины и дополнения
+[ProceXP] - Process Explorer
+[samples_maps_and_projects] - примеры XML карт
+[shapeindexer] - утилита для создание индексов к shape файлам
+[virtual disk drive] - программы для создания виртуальных логических дисков в памяти
+[watermarks] - водяные знаки для mapnik
+
+ФАЙЛЫ:
+
+backup_logs.cmd - создает копии логов
+kill.cmd - позволяет закрыть зависшее приложение `MapnikTileRenderer.exe`
+kill-mtrc.cmd - позволяет закрыть приложение `mtrc.exe`
+MakeTRZ.txt - коммандный файл для создания trz архива хранилища тайлов (копируется в папку хранилища)
+MapnikSimpleMapViewer.exe - проверка карты xml (файла легенды xml для mapnik)
+MapnikTileRenderer.exe - основная программа нарезки (оконное приложение)
+mtrc.exe - консольная программа нарезки (standalone и client-server)
+mtrc.sample.Msk.Client.cmd - запуск клиента
+mtrc.sample.Msk.Server.cmd - запуск сервера
+mtrc.sample.Msk.HoleServer.cmd - запуск сервера в режиме нарезки только дыр 
+SaveHttpDump.exe - утилита для сохранения дампа нарезки через веб
+SaveHttpDump_Local.cmd - сохраняем дамп нарезки локального сервера в файл
+ShapeViewer.exe - утилита для просмотра Shape файлов
+TileCopier.exe - утилита для копирования тайлов их одного хранилища в другое
+tza.exe - утилита для упаковки\распаковки тайлов хранилища в один или несколько файлов

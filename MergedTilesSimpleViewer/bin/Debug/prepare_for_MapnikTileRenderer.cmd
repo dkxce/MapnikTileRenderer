@@ -1,0 +1,1 @@
+copy MergedTilesSimpleViewer.exe ..\..\..\bin\debug\MergedTilesSimpleViewer.bin

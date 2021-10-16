@@ -1,0 +1,2 @@
+rem mtrc.exe D:\__MAPNIK\msk.mtr_project /holeserver 9666 LOGS\--sample.holes
+mtrc.exe D:\__MAPNIK\msk.mtr_project /holeserver 9666 LOGS\--sample.holes -task_msk_5_40

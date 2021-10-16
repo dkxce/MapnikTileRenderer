@@ -1,0 +1,54 @@
+C:\Downloads\CD-REC\NaviMapNet\NaviMapNet\obj\Debug\ResolveAssemblyReference.cache
+C:\Downloads\CD-REC\NaviMapNet\NaviMapNet\obj\Debug\NaviMapNet.NaviMapNetViewer.resources
+C:\Downloads\CD-REC\NaviMapNet\NaviMapNet\obj\Debug\NaviMapNet.csproj.GenerateResource.Cache
+C:\Downloads\CD-REC\NaviMapNet\NaviMapNet\bin\Debug\NaviMapNet.dll
+C:\Downloads\CD-REC\NaviMapNet\NaviMapNet\bin\Debug\NaviMapNet.pdb
+C:\Downloads\CD-REC\NaviMapNet\NaviMapNet\obj\Debug\NaviMapNet.dll
+C:\Downloads\CD-REC\NaviMapNet\NaviMapNet\obj\Debug\NaviMapNet.pdb
+C:\Downloads\CD-REC\NaviMapNet\NaviMapNet\obj\Debug\NaviMapNet.Properties.Resources.resources
+C:\Downloads\CD-REC\_MAPNIK_TILE_RENDERER\NaviMapNet\bin\Debug\NaviMapNet.dll
+C:\Downloads\CD-REC\_MAPNIK_TILE_RENDERER\NaviMapNet\bin\Debug\NaviMapNet.pdb
+C:\Downloads\CD-REC\_MAPNIK_TILE_RENDERER\NaviMapNet\obj\Debug\ResolveAssemblyReference.cache
+C:\Downloads\CD-REC\_MAPNIK_TILE_RENDERER\NaviMapNet\obj\Debug\NaviMapNet.NaviMapNetViewer.resources
+C:\Downloads\CD-REC\_MAPNIK_TILE_RENDERER\NaviMapNet\obj\Debug\NaviMapNet.Properties.Resources.resources
+C:\Downloads\CD-REC\_MAPNIK_TILE_RENDERER\NaviMapNet\obj\Debug\NaviMapNet.csproj.GenerateResource.Cache
+C:\Downloads\CD-REC\_MAPNIK_TILE_RENDERER\NaviMapNet\obj\Debug\NaviMapNet.dll
+C:\Downloads\CD-REC\_MAPNIK_TILE_RENDERER\NaviMapNet\obj\Debug\NaviMapNet.pdb
+C:\PROJECTS\CSharp_Navicom\ADDR_SEARCH\_MAPNIK_TILE_RENDERER\NaviMapNet\bin\Debug\NaviMapNet.dll
+C:\PROJECTS\CSharp_Navicom\ADDR_SEARCH\_MAPNIK_TILE_RENDERER\NaviMapNet\bin\Debug\NaviMapNet.pdb
+C:\PROJECTS\CSharp_Navicom\ADDR_SEARCH\_MAPNIK_TILE_RENDERER\NaviMapNet\obj\Debug\ResolveAssemblyReference.cache
+C:\PROJECTS\CSharp_Navicom\ADDR_SEARCH\_MAPNIK_TILE_RENDERER\NaviMapNet\obj\Debug\NaviMapNet.NaviMapNetViewer.resources
+C:\PROJECTS\CSharp_Navicom\ADDR_SEARCH\_MAPNIK_TILE_RENDERER\NaviMapNet\obj\Debug\NaviMapNet.Properties.Resources.resources
+C:\PROJECTS\CSharp_Navicom\ADDR_SEARCH\_MAPNIK_TILE_RENDERER\NaviMapNet\obj\Debug\NaviMapNet.csproj.GenerateResource.Cache
+C:\PROJECTS\CSharp_Navicom\ADDR_SEARCH\_MAPNIK_TILE_RENDERER\NaviMapNet\obj\Debug\NaviMapNet.dll
+C:\PROJECTS\CSharp_Navicom\ADDR_SEARCH\_MAPNIK_TILE_RENDERER\NaviMapNet\obj\Debug\NaviMapNet.pdb
+C:\Downloads\CD-REC\TEST\NaviMapNet\bin\Debug\NaviMapNet.dll
+C:\Downloads\CD-REC\TEST\NaviMapNet\bin\Debug\NaviMapNet.pdb
+C:\Downloads\CD-REC\TEST\NaviMapNet\obj\Debug\ResolveAssemblyReference.cache
+C:\Downloads\CD-REC\TEST\NaviMapNet\obj\Debug\NaviMapNet.NaviMapNetViewer.resources
+C:\Downloads\CD-REC\TEST\NaviMapNet\obj\Debug\NaviMapNet.Properties.Resources.resources
+C:\Downloads\CD-REC\TEST\NaviMapNet\obj\Debug\NaviMapNet.csproj.GenerateResource.Cache
+C:\Downloads\CD-REC\TEST\NaviMapNet\obj\Debug\NaviMapNet.dll
+C:\Downloads\CD-REC\TEST\NaviMapNet\obj\Debug\NaviMapNet.pdb
+D:\PROJECTS\Планирование\20XX Template\Soft (Win+Android)\MY KMZ KML TOOLS\KMZRebuilder+Viewer\NaviMapNet[Sources]\obj\Debug\ResolveAssemblyReference.cache
+D:\PROJECTS\Планирование\20XX Template\Soft (Win+Android)\MY KMZ KML TOOLS\KMZRebuilder+Viewer\NaviMapNet[Sources]\obj\Debug\NaviMapNet.NaviMapNetViewer.resources
+D:\PROJECTS\Планирование\20XX Template\Soft (Win+Android)\MY KMZ KML TOOLS\KMZRebuilder+Viewer\NaviMapNet[Sources]\obj\Debug\NaviMapNet.Properties.Resources.resources
+D:\PROJECTS\Планирование\20XX Template\Soft (Win+Android)\MY KMZ KML TOOLS\KMZRebuilder+Viewer\NaviMapNet[Sources]\obj\Debug\NaviMapNet.csproj.GenerateResource.Cache
+D:\PROJECTS\Планирование\20XX Template\Soft (Win+Android)\MY KMZ KML TOOLS\KMZRebuilder+Viewer\NaviMapNet[Sources]\obj\Debug\NaviMapNet.dll
+D:\PROJECTS\Планирование\20XX Template\Soft (Win+Android)\MY KMZ KML TOOLS\KMZRebuilder+Viewer\NaviMapNet[Sources]\obj\Debug\NaviMapNet.pdb
+D:\PROJECTS\Планирование\20XX Template\Soft (Win+Android)\MY KMZ KML TOOLS\KMZRebuilder+Viewer\NaviMapNet[Sources]\bin\Debug\NaviMapNet.dll
+D:\PROJECTS\Планирование\20XX Template\Soft (Win+Android)\MY KMZ KML TOOLS\KMZRebuilder+Viewer\NaviMapNet[Sources]\bin\Debug\NaviMapNet.pdb
+D:\PROJECTS\Планирование\20XX Template\Soft (Win+Android)\MY KMZ KML TOOLS\KMZRebuilder+Viewer\_SOURCES\KMZTools_[Sources]_20210823H\NaviMapNet_[Sources]_20191007H\bin\Debug\NaviMapNet.dll
+D:\PROJECTS\Планирование\20XX Template\Soft (Win+Android)\MY KMZ KML TOOLS\KMZRebuilder+Viewer\_SOURCES\KMZTools_[Sources]_20210823H\NaviMapNet_[Sources]_20191007H\bin\Debug\NaviMapNet.pdb
+D:\PROJECTS\Планирование\20XX Template\Soft (Win+Android)\MY KMZ KML TOOLS\KMZRebuilder+Viewer\_SOURCES\KMZTools_[Sources]_20210823H\NaviMapNet_[Sources]_20191007H\obj\Debug\ResolveAssemblyReference.cache
+D:\PROJECTS\Планирование\20XX Template\Soft (Win+Android)\MY KMZ KML TOOLS\KMZRebuilder+Viewer\_SOURCES\KMZTools_[Sources]_20210823H\NaviMapNet_[Sources]_20191007H\obj\Debug\NaviMapNet.NaviMapNetViewer.resources
+D:\PROJECTS\Планирование\20XX Template\Soft (Win+Android)\MY KMZ KML TOOLS\KMZRebuilder+Viewer\_SOURCES\KMZTools_[Sources]_20210823H\NaviMapNet_[Sources]_20191007H\obj\Debug\NaviMapNet.Properties.Resources.resources
+D:\PROJECTS\Планирование\20XX Template\Soft (Win+Android)\MY KMZ KML TOOLS\KMZRebuilder+Viewer\_SOURCES\KMZTools_[Sources]_20210823H\NaviMapNet_[Sources]_20191007H\obj\Debug\NaviMapNet.csproj.GenerateResource.Cache
+D:\PROJECTS\Планирование\20XX Template\Soft (Win+Android)\MY KMZ KML TOOLS\KMZRebuilder+Viewer\_SOURCES\KMZTools_[Sources]_20210823H\NaviMapNet_[Sources]_20191007H\obj\Debug\NaviMapNet.dll
+D:\PROJECTS\Планирование\20XX Template\Soft (Win+Android)\MY KMZ KML TOOLS\KMZRebuilder+Viewer\_SOURCES\KMZTools_[Sources]_20210823H\NaviMapNet_[Sources]_20191007H\obj\Debug\NaviMapNet.pdb
+C:\Downloads\CD-REC\_MAPNIK_TILE_RENDERER\NaviMapNet\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Downloads\CD-REC\_MAPNIK_TILE_RENDERER\NaviMapNet\obj\x86\Debug\NaviMapNet.NaviMapNetViewer.resources
+C:\Downloads\CD-REC\_MAPNIK_TILE_RENDERER\NaviMapNet\obj\x86\Debug\NaviMapNet.Properties.Resources.resources
+C:\Downloads\CD-REC\_MAPNIK_TILE_RENDERER\NaviMapNet\obj\x86\Debug\NaviMapNet.csproj.GenerateResource.Cache
+C:\Downloads\CD-REC\_MAPNIK_TILE_RENDERER\NaviMapNet\obj\x86\Debug\NaviMapNet.dll
+C:\Downloads\CD-REC\_MAPNIK_TILE_RENDERER\NaviMapNet\obj\x86\Debug\NaviMapNet.pdb

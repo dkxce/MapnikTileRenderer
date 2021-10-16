@@ -1,0 +1,10 @@
+C:\PROJECTS\CSharp_Navicom\ADDR_SEARCH\_MAPNIK_TILE_RENDERER\Render_Schedule_Client\obj\Debug\ResolveAssemblyReference.cache
+C:\PROJECTS\CSharp_Navicom\ADDR_SEARCH\_MAPNIK_TILE_RENDERER\bin\Debug\Render_Schedule\Render_Schedule_Client.exe
+C:\PROJECTS\CSharp_Navicom\ADDR_SEARCH\_MAPNIK_TILE_RENDERER\bin\Debug\Render_Schedule\Render_Schedule_Client.pdb
+C:\PROJECTS\CSharp_Navicom\ADDR_SEARCH\_MAPNIK_TILE_RENDERER\Render_Schedule_Client\obj\Debug\Render_Schedule_Client.exe
+C:\PROJECTS\CSharp_Navicom\ADDR_SEARCH\_MAPNIK_TILE_RENDERER\Render_Schedule_Client\obj\Debug\Render_Schedule_Client.pdb
+C:\Downloads\CD-REC\_MAPNIK_TILE_RENDERER\Render_Schedule_Client\bin\x86\Debug\Render_Schedule_Client.exe
+C:\Downloads\CD-REC\_MAPNIK_TILE_RENDERER\Render_Schedule_Client\bin\x86\Debug\Render_Schedule_Client.pdb
+C:\Downloads\CD-REC\_MAPNIK_TILE_RENDERER\Render_Schedule_Client\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Downloads\CD-REC\_MAPNIK_TILE_RENDERER\Render_Schedule_Client\obj\x86\Debug\Render_Schedule_Client.exe
+C:\Downloads\CD-REC\_MAPNIK_TILE_RENDERER\Render_Schedule_Client\obj\x86\Debug\Render_Schedule_Client.pdb

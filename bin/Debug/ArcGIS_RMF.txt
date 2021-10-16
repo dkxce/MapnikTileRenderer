@@ -1,0 +1,47 @@
+Файл conf.xml генерируется автоматически:
+
+	при нарезке уровней 0..9 - conf.xml включает настройки для базовой карты
+	при нарезке уровней 10..21 - cong.xml включает настройки для детальной карты региона
+	при нарезке и тех, и других уровней файл содержит настройки последнего нарезанного зума
+
+Для работы службы nmsGetTiler необходимо также положить в эту папку слудующие файлы:
+
+	bounds.shp - файл с границами хранилица; содержит 1 полигон обозначающий географические границы тайлового хранилища 
+				в градусах широты и долготы (WGS-84)
+				проекция EPSG:3857 / SR-ORG:7483 / EPSG:900913 / WGS84 Web Mercator (Auxiliary Sphere, Spherical Mercator)				
+
+	regions.bin - бинарный массив байт - список всех регионов, которые попадают в данное хранилище (согласно mapsupport и файлу regions.dbf)
+				сгенирировать этот файл можно с помощью программы TileXYZtoLatLon (TileToXY.exe) которая располагается в папке со службой
+				nmsGetTiler  (прежде необходимо полодить в папку файл bounds.shp)
+				
+				список всех регионов можно проверить с помощью программы RegionsShpToDB.exe или PointInRegionUtilsCheck.exe
+				которые располагаются в папке со службой nmsGetTiler
+
+
+Все тайлы распределены по уровням и лежат в папке `_alllayers`
+
+Соответствие имен папок уровней для базовой карты
+	\_alllayers\L00 - Zoom 4
+	\_alllayers\L01 - Zoom 5
+	\_alllayers\L02 - Zoom 6
+	\_alllayers\L03 - Zoom 7
+	\_alllayers\L04 - Zoom 8
+	\_alllayers\L05 - Zoom 9
+
+Соответствие имен папок уровней для детальной карты региона
+	\_alllayers\L00 - Zoom 10
+	\_alllayers\L01 - Zoom 11
+	\_alllayers\L02 - Zoom 12
+	\_alllayers\L03 - Zoom 13
+	\_alllayers\L04 - Zoom 14
+	\_alllayers\L05 - Zoom 15
+	\_alllayers\L06 - Zoom 16
+	\_alllayers\L07 - Zoom 17
+	\_alllayers\L08 - Zoom 18
+	\_alllayers\L09 - Zoom 19
+	\_alllayers\L10 - Zoom 20
+	\_alllayers\L11 - Zoom 21
+	
+Проверить как нарезались тайлы можно с помощью программы
+
+	MergedTilesSimpleViewer.exe

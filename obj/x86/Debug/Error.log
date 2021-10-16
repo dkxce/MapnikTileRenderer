@@ -1,0 +1,29 @@
+
+
+29.01.2016 14:00:22: System.TypeInitializationException: The type initializer for 'TileRendering.TileRenderer' threw an exception. ---> System.IO.FileNotFoundException: Could not load file or assembly 'MapnikCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies. Не удается найти указанный файл.
+File name: 'MapnikCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+   at TileRendering.TileRenderer..cctor()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+   --- End of inner exception stack trace ---
+   at TileRendering.TileRenderer.GetCurrentDir()
+   at MapnikTileRenderer.MainForm.MainForm_FormClosed(Object sender, FormClosedEventArgs e) in C:\PROJECTS\CSharp_Navicom\ADDR_SEARCH\_MAPNIK_TILE_RENDERER\MainForm.cs:line 1233
+   at System.Windows.Forms.Form.OnFormClosed(FormClosedEventArgs e)
+   at System.Windows.Forms.Form.RaiseFormClosedOnAppExit()
+   at System.Windows.Forms.Application.ExitInternal()
+   at System.Windows.Forms.Application.ThreadContext.OnThreadException(Exception t)
+   at System.Windows.Forms.Control.WndProcException(Exception e)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnThreadException(Exception e)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+   at System.Windows.Forms.SafeNativeMethods.ShowWindow(HandleRef hWnd, Int32 nCmdShow)
+   at System.Windows.Forms.Control.SetVisibleCore(Boolean value)
+   at System.Windows.Forms.Form.SetVisibleCore(Boolean value)
+   at System.Windows.Forms.Control.set_Visible(Boolean value)
+   at System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   at System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   at System.Windows.Forms.Application.Run(Form mainForm)
+   at MapnikTileRenderer.AppStart.Main() in C:\PROJECTS\CSharp_Navicom\ADDR_SEARCH\_MAPNIK_TILE_RENDERER\AppStart.cs:line 96

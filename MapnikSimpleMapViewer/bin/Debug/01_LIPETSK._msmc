@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<app_texts_data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <center>
+    <string>39.4730957351448</string>
+    <string>52.5814719429883</string>
+  </center>
+  <size>
+    <unsignedInt>800</unsignedInt>
+    <unsignedInt>600</unsignedInt>
+  </size>
+  <map>C:\PROJECTS\CSharp_Navicom\ADDR_SEARCH\_MAPNIK_TILE_RENDERER\bin\Debug\maps\nav_maps(0.97).xml</map>
+  <zoom>10</zoom>
+</app_texts_data>

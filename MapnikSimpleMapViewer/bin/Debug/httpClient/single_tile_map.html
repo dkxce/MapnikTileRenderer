@@ -1,0 +1,26 @@
+﻿<html><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Navicom Tiles WMS Example</title>    
+	<meta name="description" content="Navicom Tiles WMS Example" />
+	<meta name="robots" content="nofollow" />
+</head>
+<body style="margin:0px;padding:0px;">
+	<div id="d_map" style="position:absolute;left:5px;top:5px;width:1200px;height:740px;border:solid 1px black;overflow:hidden;z-index:50;"></div>
+	<div id="d_navi" style="position:absolute;left:20px;top:10px;width:600px;height:25px;border:solid 0px silver;z-index:53;"></div>
+	<div id="d_zooms" style="position:absolute;left:20px;top:40px;width:28px;height:224px;border:solid 0px black;overflow:hidden;z-index:54;"></div>
+	<div id="ll" style="position:absolute;left:5px;top:745px;"></div>
+</body>
+    <script type="text/javascript" src="navimap/js/NaviMap.js"></script>
+	<script type="text/javascript">	
+		var NaviMap = new TNaviMap('d_map','d_zooms','d_navi');	
+		// NaviMap.SetMapSize(1400,700);
+		NaviMap.SetCopyright('&copy; Navicom 2009-2015');									
+		if(!NaviMap.LoadMapFromUrl()) NaviMap.LoadMapDefaults();
+		NaviMap.EventListener.AddListen('Events.Map.onMouseClick', function(sender,evnt)
+		{				
+			var ll = NaviMap.ConvertPointToLatLon(NaviMap.XYZ.x+NaviMap.Mouse.MapCenter.click_x*NaviMap.XYZ.zoom,NaviMap.XYZ.y-NaviMap.Mouse.MapCenter.click_y*NaviMap.XYZ.zoom);				
+			document.getElementById("ll").innerHTML = ll.lat+' &nbsp;&nbsp; '+ll.lon;
+		});			
+	</script>	
+</html>
+

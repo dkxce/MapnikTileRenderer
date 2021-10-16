@@ -1,0 +1,1 @@
+mtrc.exe E:\_RENDER_MAP_TILES\LIPETS_20151029_BY_IGOR\Lipetsk_FULL_5_40.mtr_project /holeserver 9666 "logs\--sample.holes" -task_Lipetsk

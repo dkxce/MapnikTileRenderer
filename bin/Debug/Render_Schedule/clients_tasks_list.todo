@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfTASK>
+  <TASK IP="127.0.0.1" ID="testA" cmd="cmd.exe" RunAt="2016-11-28T08:48:50.8467732+03:00" Started="2016-11-28T08:48:52.1760552+03:00" status="started" />
+  <TASK IP="127.0.0.1" ID="testB" User="sa" Pass="q" cmd="cmd.exe" RunAt="2016-11-28T08:09:00.8467732+03:00" Started="2016-11-28T08:09:04.6451501+03:00" status="failed">
+    <error>Вход в систему не произведен: имя пользователя или пароль не опознаны</error>
+  </TASK>
+  <TASK IP="127.0.0.1" ID="testC" User="Navicom\Argis" Pass="system" cmd="cmd.exe" RunAt="2016-11-28T08:09:20.8467732+03:00" Started="2016-11-28T08:09:26.7077913+03:00" status="started" />
+  <TASK IP="127.0.0.1" ID="testD" User="dsdg" Pass="gfhreh" cmd="cmd.exe" RunAt="2016-11-27T23:12:50.8467732+03:00" Started="0001-01-01T00:00:00" status="skip" />
+</ArrayOfTASK>

@@ -1,0 +1,16 @@
+C:\Downloads\CD-REC\ChkT\obj\Debug\ResolveAssemblyReference.cache
+C:\Downloads\CD-REC\ChkT\obj\Debug\WindowsApplication1.MFrom.resources
+C:\Downloads\CD-REC\ChkT\obj\Debug\PolyLineBuffer.csproj.GenerateResource.Cache
+C:\Downloads\CD-REC\ChkT\bin\Debug\PolyLineBuffer.exe
+C:\Downloads\CD-REC\ChkT\bin\Debug\PolyLineBuffer.pdb
+C:\Downloads\CD-REC\ChkT\obj\Debug\PolyLineBuffer.Properties.Resources.resources
+C:\Downloads\CD-REC\ChkT\obj\Debug\PolyLineBuffer.exe
+C:\Downloads\CD-REC\ChkT\obj\Debug\PolyLineBuffer.pdb
+C:\PROJECTS\CSharp_Navicom\ADDR_SEARCH\_MAPNIK_TILE_RENDERER\PolyLineBuffer\obj\Debug\PolyLineBuffer.exe
+C:\PROJECTS\CSharp_Navicom\ADDR_SEARCH\_MAPNIK_TILE_RENDERER\PolyLineBuffer\obj\Debug\PolyLineBuffer.pdb
+C:\PROJECTS\CSharp_Navicom\ADDR_SEARCH\_MAPNIK_TILE_RENDERER\PolyLineBuffer\bin\Debug\PolyLineBuffer.exe
+C:\PROJECTS\CSharp_Navicom\ADDR_SEARCH\_MAPNIK_TILE_RENDERER\PolyLineBuffer\bin\Debug\PolyLineBuffer.pdb
+C:\PROJECTS\CSharp_Navicom\ADDR_SEARCH\_MAPNIK_TILE_RENDERER\PolyLineBuffer\obj\Debug\ResolveAssemblyReference.cache
+C:\PROJECTS\CSharp_Navicom\ADDR_SEARCH\_MAPNIK_TILE_RENDERER\PolyLineBuffer\obj\Debug\WindowsApplication1.MFrom.resources
+C:\PROJECTS\CSharp_Navicom\ADDR_SEARCH\_MAPNIK_TILE_RENDERER\PolyLineBuffer\obj\Debug\PolyLineBuffer.Properties.Resources.resources
+C:\PROJECTS\CSharp_Navicom\ADDR_SEARCH\_MAPNIK_TILE_RENDERER\PolyLineBuffer\obj\Debug\PolyLineBuffer.csproj.GenerateResource.Cache

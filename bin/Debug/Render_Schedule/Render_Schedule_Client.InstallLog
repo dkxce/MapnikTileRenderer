@@ -1,0 +1,35 @@
+﻿Installing assembly 'C:\PROJECTS\CSharp_Navicom\ADDR_SEARCH\_MAPNIK_TILE_RENDERER\bin\Debug\Render_Schedule\Render_Schedule_Client.exe'.
+Affected parameters are:
+   logtoconsole = true
+   assemblypath = C:\PROJECTS\CSharp_Navicom\ADDR_SEARCH\_MAPNIK_TILE_RENDERER\bin\Debug\Render_Schedule\Render_Schedule_Client.exe
+   logfile = C:\PROJECTS\CSharp_Navicom\ADDR_SEARCH\_MAPNIK_TILE_RENDERER\bin\Debug\Render_Schedule\Render_Schedule_Client.InstallLog
+Installing service render_schedule_client...
+Service render_schedule_client has been successfully installed.
+Creating EventLog source render_schedule_client in log Application...
+Committing assembly 'C:\PROJECTS\CSharp_Navicom\ADDR_SEARCH\_MAPNIK_TILE_RENDERER\bin\Debug\Render_Schedule\Render_Schedule_Client.exe'.
+Affected parameters are:
+   logtoconsole = true
+   assemblypath = C:\PROJECTS\CSharp_Navicom\ADDR_SEARCH\_MAPNIK_TILE_RENDERER\bin\Debug\Render_Schedule\Render_Schedule_Client.exe
+   logfile = C:\PROJECTS\CSharp_Navicom\ADDR_SEARCH\_MAPNIK_TILE_RENDERER\bin\Debug\Render_Schedule\Render_Schedule_Client.InstallLog
+Uninstalling assembly 'C:\PROJECTS\CSharp_Navicom\ADDR_SEARCH\_MAPNIK_TILE_RENDERER\bin\Debug\Render_Schedule\Render_Schedule_Client.exe'.
+Affected parameters are:
+   logtoconsole = true
+   assemblypath = C:\PROJECTS\CSharp_Navicom\ADDR_SEARCH\_MAPNIK_TILE_RENDERER\bin\Debug\Render_Schedule\Render_Schedule_Client.exe
+   logfile = C:\PROJECTS\CSharp_Navicom\ADDR_SEARCH\_MAPNIK_TILE_RENDERER\bin\Debug\Render_Schedule\Render_Schedule_Client.InstallLog
+Removing EventLog source render_schedule_client.
+Service render_schedule_client is being removed from the system...
+Service render_schedule_client was successfully removed from the system.
+Attempt to stop service render_schedule_client.
+Installing assembly 'C:\PROJECTS\CSharp_Navicom\ADDR_SEARCH\_MAPNIK_TILE_RENDERER\bin\Debug\Render_Schedule\Render_Schedule_Client.exe'.
+Affected parameters are:
+   logtoconsole = true
+   assemblypath = C:\PROJECTS\CSharp_Navicom\ADDR_SEARCH\_MAPNIK_TILE_RENDERER\bin\Debug\Render_Schedule\Render_Schedule_Client.exe
+   logfile = C:\PROJECTS\CSharp_Navicom\ADDR_SEARCH\_MAPNIK_TILE_RENDERER\bin\Debug\Render_Schedule\Render_Schedule_Client.InstallLog
+Installing service render_schedule_client...
+Service render_schedule_client has been successfully installed.
+Creating EventLog source render_schedule_client in log Application...
+Committing assembly 'C:\PROJECTS\CSharp_Navicom\ADDR_SEARCH\_MAPNIK_TILE_RENDERER\bin\Debug\Render_Schedule\Render_Schedule_Client.exe'.
+Affected parameters are:
+   logtoconsole = true
+   assemblypath = C:\PROJECTS\CSharp_Navicom\ADDR_SEARCH\_MAPNIK_TILE_RENDERER\bin\Debug\Render_Schedule\Render_Schedule_Client.exe
+   logfile = C:\PROJECTS\CSharp_Navicom\ADDR_SEARCH\_MAPNIK_TILE_RENDERER\bin\Debug\Render_Schedule\Render_Schedule_Client.InstallLog

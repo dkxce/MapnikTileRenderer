@@ -1,0 +1,8 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <StartArguments>"C:\PROJECTS\CSharp_Navicom\ADDR_SEARCH\_MAPNIK_TILE_RENDERER\bin\Debug\PROJ_Lipetsk.mtr_project" "wait"</StartArguments>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <StartArguments>E:\_RENDER_MAP_TILES\LIPETS_20151029_BY_IGOR\Lipetsk_FULL_5_40.mtr_project -wait</StartArguments>
+  </PropertyGroup>
+</Project>

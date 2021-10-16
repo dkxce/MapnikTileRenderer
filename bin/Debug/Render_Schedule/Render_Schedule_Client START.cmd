@@ -1,0 +1,2 @@
+net start Render_Schedule_Client
+pause

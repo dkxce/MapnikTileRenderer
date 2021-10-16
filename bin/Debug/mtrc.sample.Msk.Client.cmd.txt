@@ -1,0 +1,2 @@
+rem mtrc.exe D:\__MAPNIK\msk.mtr_project /client 127.0.0.1:9666
+mtrc.exe D:\__MAPNIK\msk.mtr_project /client 127.0.0.1:9666 -task_msk_5_40 -threads_00

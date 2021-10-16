@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Map srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs" background-color="#FFFFFFFF">
+   <!-- LAYER STYLES -->
+   <Style name="LAND">
+		<Rule>
+			<PolygonSymbolizer fill="rgb(219,219,219)" fill-opacity="1.0"/>
+        </Rule>
+    </Style>
+   <Style name="VEGETATION">
+		<Rule>
+			<Filter>[grmn_type]='CUTTING'or [grmn_type]='WOODS_CUT'</Filter>
+			<PolygonSymbolizer fill="rgb(222,255,153)" fill-opacity="1.0"/>
+        </Rule>
+		<Rule>
+			<Filter>[grmn_type]='FIELD'</Filter>
+			<PolygonSymbolizer fill="rgb(144,244,144)" fill-opacity="1.0"/>
+        </Rule>
+		<Rule>
+			<Filter>[grmn_type]='GRASS'</Filter>
+			<PolygonSymbolizer fill="rgb(200,255,190)" fill-opacity="1.0"/>
+        </Rule>
+		<Rule>
+			<Filter>[grmn_type]='MEADOW'</Filter>
+			<PolygonSymbolizer fill="rgb(175,205,51)" fill-opacity="1.0"/>
+        </Rule>
+		<Rule>
+			<Filter>[grmn_type]='MOSS'or [grmn_type]='REED'</Filter>
+			<PolygonSymbolizer fill="rgb(150,175,50)" fill-opacity="1.0"/>
+        </Rule>
+		<Rule>
+			<Filter>[grmn_type]='ORCHARD'</Filter>
+			<PolygonSymbolizer fill="rgb(175,230,100)" fill-opacity="1.0"/>
+        </Rule>
+		<Rule>
+			<Filter>[grmn_type]='SCRUB'</Filter>
+			<PolygonSymbolizer fill="rgb(175,225,175)" fill-opacity="1.0"/>
+        </Rule>
+		<Rule>
+			<Filter>[grmn_type]='URBAN_PARK'</Filter>
+			<PolygonSymbolizer fill="rgb(150,205,102)" fill-opacity="1.0"/>
+        </Rule>
+		<Rule>
+			<Filter>[grmn_type]='WOODS'</Filter>
+			<PolygonSymbolizer fill="rgb(171,205,102)" fill-opacity="1.0"/>
+        </Rule>
+		<Rule>
+			<Filter>[grmn_type]='WOODS_BURNT'</Filter>
+			<PolygonSymbolizer fill="rgb(200,205,150)" fill-opacity="1.0"/>
+        </Rule>
+		<Rule>
+			<Filter>[grmn_type]='WOODS_MIDGET'</Filter>
+			<PolygonSymbolizer fill="rgb(171,205,153)" fill-opacity="1.0"/>
+        </Rule>
+		<Rule>
+			<Filter>[grmn_type]='WOODS_PLANTATION'</Filter>
+			<PolygonSymbolizer fill="rgb(171,222,102)" fill-opacity="1.0"/>
+        </Rule>
+		<Rule>
+			<Filter>[grmn_type]='WOODS_SMALL'or [grmn_type]='WOODS_SPARSE'</Filter>
+			<PolygonSymbolizer fill="rgb(171,205,122)" fill-opacity="1.0"/>
+        </Rule>
+    </Style>
+   <Style name="SEA">
+		<Rule>
+			<PolygonSymbolizer fill="rgb(82,121,163)" fill-opacity="1.0"/>
+        </Rule>
+    </Style>
+	<Style name="SEA_text">
+		<Rule>
+			<MinScaleDenominator>50001</MinScaleDenominator>
+			<MaxScaleDenominator>380000</MaxScaleDenominator>
+			<TextSymbolizer face-name="Calibri Bold" size="9" fill="rgb(0,76,115)" halo-fill= "white" halo-radius="1" placement="interior" allow-overlap="false">[name]</TextSymbolizer>
+        </Rule>
+		<Rule>
+			<MinScaleDenominator>24001</MinScaleDenominator>
+			<MaxScaleDenominator>50000</MaxScaleDenominator>
+			<TextSymbolizer face-name="Calibri Bold" size="11" fill="rgb(0,76,115)" halo-fill= "white" halo-radius="1" placement="interior" allow-overlap="false">[name]</TextSymbolizer>
+        </Rule>
+		<Rule>
+			<MinScaleDenominator>13001</MinScaleDenominator>
+			<MaxScaleDenominator>24000</MaxScaleDenominator>
+			<TextSymbolizer face-name="Calibri Bold" size="11" fill="rgb(0,76,115)" halo-fill= "white" halo-radius="1" placement="interior" allow-overlap="false">[name]</TextSymbolizer>
+        </Rule>
+		<Rule>
+			<MinScaleDenominator>6001</MinScaleDenominator>
+			<MaxScaleDenominator>13000</MaxScaleDenominator>
+			<TextSymbolizer face-name="Calibri Bold" size="13" fill="rgb(0,76,115)" halo-fill= "white" halo-radius="1" placement="interior" allow-overlap="false">[name]</TextSymbolizer>
+        </Rule>
+		<Rule>
+			<MaxScaleDenominator>6000</MaxScaleDenominator>
+			<TextSymbolizer face-name="Calibri Bold" size="14" fill="rgb(0,76,115)" halo-fill= "white" halo-radius="1" placement="interior" allow-overlap="false">[name]</TextSymbolizer>
+        </Rule>
+    </Style>
+   <Style name="RIVER">
+		<Rule>
+			<MinScaleDenominator>50001</MinScaleDenominator>
+			<LineSymbolizer stroke="rgb(68,101,137)" stroke-width="1.0" stroke-linecap="round"/>
+        </Rule>
+    	<Rule>
+			<MaxScaleDenominator>50000</MaxScaleDenominator>
+			<LineSymbolizer stroke="rgb(68,101,137)" stroke-width="1.3" stroke-linecap="round"/>
+        </Rule>
+    </Style>
+	<Style name="RIVER_text">
+		<Rule>
+			<MinScaleDenominator>50001</MinScaleDenominator>
+			<MaxScaleDenominator>100000</MaxScaleDenominator>
+			<TextSymbolizer face-name="Calibri Bold" size="9" fill="rgb(0,76,115)" halo-fill= "white" halo-radius="1" placement="line" allow-overlap="false">[name]</TextSymbolizer>
+        </Rule>
+		<Rule>
+			<MaxScaleDenominator>50000</MaxScaleDenominator>
+			<TextSymbolizer face-name="Calibri Bold Italic" size="10" fill="rgb(0,76,115)" halo-fill= "white" halo-radius="1" placement="line" allow-overlap="false">[name]</TextSymbolizer>
+        </Rule>
+	</Style>
+	<Style name="BUILDING">
+		<Rule>
+			<MaxScaleDenominator>50000</MaxScaleDenominator>
+			<PolygonSymbolizer fill="rgb(178,178,178)" fill-opacity="1.0"/>
+        </Rule>
+    </Style>
+   <Style name="ROADS_BACKGROUND">
+		<Rule>
+			<MinScaleDenominator>50001</MinScaleDenominator>
+			<MaxScaleDenominator>380000</MaxScaleDenominator>
+            <Filter>[grmn_type]='ARTERIAL'or [grmn_type]='HIGH_SPEED_RAMP'</Filter>
+            <LineSymbolizer stroke="rgb(156,156,156)" stroke-width="2" stroke-linecap="round"/>
+		</Rule>
+		<Rule>
+			<MinScaleDenominator>50001</MinScaleDenominator>
+			<MaxScaleDenominator>100000</MaxScaleDenominator>
+            <Filter>[grmn_type]='OTHER_HWY'</Filter>
+            <LineSymbolizer stroke="rgb(156,156,156)" stroke-width="2" stroke-linecap="round"/>
+		</Rule>
+		<Rule>
+			<MinScaleDenominator>100001</MinScaleDenominator>
+            <Filter>[grmn_type]='MAJOR_HWY'</Filter>
+            <LineSymbolizer stroke="black" stroke-width="3" stroke-linecap="round"/>
+		</Rule>
+		<Rule>
+			<MinScaleDenominator>50001</MinScaleDenominator>
+			<MaxScaleDenominator>100000</MaxScaleDenominator>
+            <Filter>[grmn_type]='MAJOR_HWY'</Filter>
+            <LineSymbolizer stroke="black" stroke-width="4.3" stroke-linecap="round"/>
+		</Rule>
+		<Rule>
+			<MinScaleDenominator>24001</MinScaleDenominator>
+			<MaxScaleDenominator>50000</MaxScaleDenominator>
+			<Filter>[grmn_type]='ARTERIAL'</Filter>
+			<LineSymbolizer stroke="rgb(168,112,0)" stroke-width="3" stroke-linecap="round"/>
+		</Rule>
+		<Rule>
+			<MinScaleDenominator>24001</MinScaleDenominator>
+			<MaxScaleDenominator>50000</MaxScaleDenominator>
+			<Filter>[grmn_type]='OTHER_HWY'or [grmn_type]='HIGH_SPEED_RAMP' or [grmn_type]='MAJOR_CONNECTOR'or [grmn_type]='ROUNDABOUT'</Filter>
+			<LineSymbolizer stroke="rgb(156,156,156)" stroke-width="3" stroke-linecap="round"/>
+		</Rule>
+		<Rule>
+			<MinScaleDenominator>24001</MinScaleDenominator>
+			<MaxScaleDenominator>50000</MaxScaleDenominator>
+            <Filter>[grmn_type]='PRINCIPAL_HWY'</Filter>
+            <LineSymbolizer stroke="rgb(168,112,0)" stroke-width="5" stroke-linecap="round"/>
+		</Rule>
+		<Rule>
+			<MinScaleDenominator>24001</MinScaleDenominator>
+			<MaxScaleDenominator>50000</MaxScaleDenominator>
+            <Filter>[grmn_type]='MAJOR_HWY'</Filter>
+            <LineSymbolizer stroke="black" stroke-width="5" stroke-linecap="round"/>
+		</Rule>
+		<Rule>
+			<MinScaleDenominator>13001</MinScaleDenominator>
+			<MaxScaleDenominator>24000</MaxScaleDenominator>
+            <Filter>[grmn_type]='ARTERIAL'or [grmn_type]='OTHER_HWY'or [grmn_type]='HIGH_SPEED_RAMP' or [grmn_type]='MAJOR_CONNECTOR'or [grmn_type]='ROUNDABOUT'</Filter>
+            <LineSymbolizer stroke="rgb(168,112,0)" stroke-width="4.5" stroke-linecap="round"/>
+		</Rule>
+		<Rule>
+			<MinScaleDenominator>13001</MinScaleDenominator>
+			<MaxScaleDenominator>24000</MaxScaleDenominator>
+            <Filter>[grmn_type]='COLLECTOR'</Filter>
+            <LineSymbolizer stroke="rgb(178,178,178)" stroke-width="2.5" stroke-linecap="round"/>
+		</Rule>
+		<Rule>
+			<MinScaleDenominator>13001</MinScaleDenominator>
+			<MaxScaleDenominator>24000</MaxScaleDenominator>
+			<Filter>[grmn_type]='RESIDENTIAL'or [grmn_type]='LOW_SPEED_RAMP'</Filter>
+			<LineSymbolizer stroke="rgb(156,156,156)" stroke-width="3" stroke-linecap="round"/>
+		</Rule>
+		<Rule>
+			<MinScaleDenominator>13001</MinScaleDenominator>
+			<MaxScaleDenominator>24000</MaxScaleDenominator>
+            <Filter>[grmn_type]='PRINCIPAL_HWY'</Filter>
+            <LineSymbolizer stroke="rgb(168,112,0)" stroke-width="5.7" stroke-linecap="round"/>
+		</Rule>
+		<Rule>
+			<MinScaleDenominator>13001</MinScaleDenominator>
+			<MaxScaleDenominator>24000</MaxScaleDenominator>
+            <Filter>[grmn_type]='MAJOR_HWY'</Filter>
+            <LineSymbolizer stroke="black" stroke-width="8" stroke-linecap="round"/>
+		</Rule>
+		<Rule>
+			<MaxScaleDenominator>13000</MaxScaleDenominator>
+            <Filter>[grmn_type]='ARTERIAL'or [grmn_type]='OTHER_HWY'or [grmn_type]='HIGH_SPEED_RAMP' or [grmn_type]='MAJOR_CONNECTOR'or [grmn_type]='ROUNDABOUT'</Filter>
+            <LineSymbolizer stroke="rgb(168,112,0)" stroke-width="7" stroke-linecap="round"/>
+		</Rule>
+		<Rule>
+			<MaxScaleDenominator>13000</MaxScaleDenominator>
+            <Filter>[grmn_type]='COLLECTOR'</Filter>
+            <LineSymbolizer stroke="rgb(178,178,178)" stroke-width="4" stroke-linecap="round"/>
+		</Rule>
+		<Rule>
+			<MaxScaleDenominator>13000</MaxScaleDenominator>
+			<Filter>[grmn_type]='RESIDENTIAL'or [grmn_type]='LOW_SPEED_RAMP'</Filter>
+			<LineSymbolizer stroke="rgb(156,156,156)" stroke-width="4.5" stroke-linecap="round"/>
+		</Rule>
+		<Rule>
+			<MaxScaleDenominator>13000</MaxScaleDenominator>
+            <Filter>[grmn_type]='PRINCIPAL_HWY'</Filter>
+            <LineSymbolizer stroke="rgb(168,112,0)" stroke-width="8" stroke-linecap="round"/>
+		</Rule>
+		<Rule>
+			<MinScaleDenominator>6001</MinScaleDenominator>
+			<MaxScaleDenominator>13000</MaxScaleDenominator>
+            <Filter>[grmn_type]='MAJOR_HWY'</Filter>
+            <LineSymbolizer stroke="black" stroke-width="10" stroke-linecap="round"/>
+		</Rule>
+		<Rule>
+			<MaxScaleDenominator>6000</MaxScaleDenominator>
+            <Filter>[grmn_type]='MAJOR_HWY'</Filter>
+            <LineSymbolizer stroke="black" stroke-width="11" stroke-linecap="round"/>
+		</Rule>
+	</Style>		
+   <Style name="ROADS">
+		<Rule>
+			<MinScaleDenominator>380001</MinScaleDenominator>
+            <Filter>[grmn_type]='ARTERIAL'</Filter>
+            <LineSymbolizer stroke="rgb(156,156,156)" stroke-width="1.5" stroke-linecap="round"/>
+		</Rule>
+		<Rule>
+			<MinScaleDenominator>100001</MinScaleDenominator>
+            <Filter>[grmn_type]='OTHER_HWY'</Filter>
+            <LineSymbolizer stroke="rgb(156,156,156)" stroke-width="1" stroke-linecap="round"/>
+		</Rule>
+		<Rule>
+			<MinScaleDenominator>380001</MinScaleDenominator>
+            <Filter>[grmn_type]='PRINCIPAL_HWY'</Filter>
+            <LineSymbolizer stroke="rgb(255,212,92)" stroke-width="2" stroke-linecap="round"/>
+		</Rule>
+		<Rule>
+			<MinScaleDenominator>50001</MinScaleDenominator>
+			<MaxScaleDenominator>380000</MaxScaleDenominator>
+            <Filter>[grmn_type]='ARTERIAL'or [grmn_type]='HIGH_SPEED_RAMP'</Filter>
+            <LineSymbolizer stroke="white" stroke-width="0.6" stroke-linecap="round"/>
+		</Rule>
+		<Rule>
+			<MinScaleDenominator>50001</MinScaleDenominator>
+			<MaxScaleDenominator>380000</MaxScaleDenominator>
+            <Filter>[grmn_type]='PRINCIPAL_HWY'</Filter>
+            <LineSymbolizer stroke="rgb(255,212,92)" stroke-width="3" stroke-linecap="round"/>
+		</Rule>
+		<Rule>
+			<MinScaleDenominator>100001</MinScaleDenominator>
+            <Filter>[grmn_type]='MAJOR_HWY'</Filter>
+            <LineSymbolizer stroke="rgb(230,0,0)" stroke-width="1.5" stroke-linecap="round"/>
+		</Rule>
+		<Rule>
+			<MinScaleDenominator>50001</MinScaleDenominator>
+			<MaxScaleDenominator>100000</MaxScaleDenominator>
+            <Filter>[grmn_type]='FERRY'</Filter>
+			<LineSymbolizer stroke="rgb(0,38,115)" stroke-width="1" stroke-linecap="round" stroke-dasharray="1,2"/>
+		</Rule>	
+		<Rule>
+			<MinScaleDenominator>50001</MinScaleDenominator>
+			<MaxScaleDenominator>100000</MaxScaleDenominator>
+			<Filter>[grmn_type]='OTHER_HWY'</Filter>
+			<LineSymbolizer stroke="white" stroke-width="0.6" stroke-linecap="round"/>
+		</Rule>
+		<Rule>
+			<MinScaleDenominator>50001</MinScaleDenominator>
+			<MaxScaleDenominator>100000</MaxScaleDenominator>
+            <Filter>[grmn_type]='MAJOR_HWY'</Filter>
+			<LineSymbolizer stroke="rgb(230,0,0)" stroke-width="2.5" stroke-linecap="round"/>
+		</Rule>
+		<Rule>
+			<MinScaleDenominator>13001</MinScaleDenominator>
+			<MaxScaleDenominator>50000</MaxScaleDenominator>
+            <Filter>[grmn_type]='FERRY'</Filter>
+			<LineSymbolizer stroke="rgb(0,38,115)" stroke-width="1" stroke-linecap="round" stroke-dasharray="2,2"/>
+		</Rule>	
+		<Rule>
+			<MinScaleDenominator>24001</MinScaleDenominator>
+			<MaxScaleDenominator>50000</MaxScaleDenominator>
+			<Filter>[grmn_type]='ARTERIAL'</Filter>
+			<LineSymbolizer stroke="rgb(255,238,153)" stroke-width="1.5" stroke-linecap="round"/>
+		</Rule>
+		<Rule>
+			<MinScaleDenominator>24001</MinScaleDenominator>
+			<MaxScaleDenominator>50000</MaxScaleDenominator>
+			<Filter>[grmn_type]='OTHER_HWY'or [grmn_type]='HIGH_SPEED_RAMP'or [grmn_type]='MAJOR_CONNECTOR'or [grmn_type]='ROUNDABOUT'</Filter>
+			<LineSymbolizer stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+		</Rule>
+		<Rule>
+			<MinScaleDenominator>24001</MinScaleDenominator>
+			<MaxScaleDenominator>50000</MaxScaleDenominator>
+			<Filter>[grmn_type]='RESIDENTIAL'or [grmn_type]='LOW_SPEED_RAMP'</Filter>
+			<LineSymbolizer stroke="rgb(130,130,130)" stroke-width="1" stroke-linecap="round"/>
+		</Rule>
+		<Rule>
+			<MinScaleDenominator>24001</MinScaleDenominator>
+			<MaxScaleDenominator>50000</MaxScaleDenominator>
+            <Filter>[grmn_type]='PRINCIPAL_HWY'</Filter>
+            <LineSymbolizer stroke="rgb(255,238,153)" stroke-width="2.2" stroke-linecap="round"/>
+		</Rule>
+		<Rule>
+			<MinScaleDenominator>24001</MinScaleDenominator>
+			<MaxScaleDenominator>50000</MaxScaleDenominator>
+            <Filter>[grmn_type]='MAJOR_HWY'</Filter>
+			<LineSymbolizer stroke="rgb(230,0,0)" stroke-width="3" stroke-linecap="round"/>
+		</Rule>
+		<Rule>
+			<MinScaleDenominator>13001</MinScaleDenominator>
+			<MaxScaleDenominator>24000</MaxScaleDenominator>
+            <Filter>[grmn_type]='ARTERIAL'or [grmn_type]='OTHER_HWY'or [grmn_type]='HIGH_SPEED_RAMP' or [grmn_type]='MAJOR_CONNECTOR'or [grmn_type]='ROUNDABOUT'</Filter>
+            <LineSymbolizer stroke="rgb(255,238,153)" stroke-width="2.7" stroke-linecap="round"/>
+		</Rule>
+		<Rule>
+			<MinScaleDenominator>13001</MinScaleDenominator>
+			<MaxScaleDenominator>24000</MaxScaleDenominator>
+            <Filter>[grmn_type]='COLLECTOR'</Filter>
+            <LineSymbolizer stroke="white" stroke-width="1.1" stroke-linecap="round"/>
+		</Rule>
+		<Rule>
+			<MinScaleDenominator>13001</MinScaleDenominator>
+			<MaxScaleDenominator>24000</MaxScaleDenominator>
+            <Filter>[grmn_type]='DRIVEWAY_CUST'</Filter>
+            <LineSymbolizer stroke="rgb(130,130,130)" stroke-width="2" stroke-linecap="round"/>
+		</Rule>
+		<Rule>
+			<MinScaleDenominator>13001</MinScaleDenominator>
+			<MaxScaleDenominator>24000</MaxScaleDenominator>
+			<Filter>[grmn_type]='RESIDENTIAL'or [grmn_type]='LOW_SPEED_RAMP'</Filter>
+			<LineSymbolizer stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+		</Rule>
+		<Rule>
+			<MinScaleDenominator>13001</MinScaleDenominator>
+			<MaxScaleDenominator>24000</MaxScaleDenominator>
+            <Filter>[grmn_type]='PRINCIPAL_HWY'</Filter>
+            <LineSymbolizer stroke="rgb(255,238,153)" stroke-width="3" stroke-linecap="round"/>
+		</Rule>
+		<Rule>
+			<MinScaleDenominator>13001</MinScaleDenominator>
+			<MaxScaleDenominator>24000</MaxScaleDenominator>
+            <Filter>[grmn_type]='MAJOR_HWY'</Filter>
+			<LineSymbolizer stroke="rgb(230,0,0)" stroke-width="5" stroke-linecap="round"/>
+		</Rule>	
+		<Rule>
+			<MinScaleDenominator>13001</MinScaleDenominator>
+			<MaxScaleDenominator>24000</MaxScaleDenominator>
+            <Filter>[grmn_type]='IMPROVED_UNPAVED_ROAD'</Filter>
+            <LineSymbolizer stroke="rgb(130,130,130)" stroke-width="1" stroke-linecap="round"/>
+		</Rule>
+		<Rule>
+			<MinScaleDenominator>13001</MinScaleDenominator>
+			<MaxScaleDenominator>24000</MaxScaleDenominator>
+            <Filter>[grmn_type]='UNPAVED_ROAD'</Filter>
+            <LineSymbolizer stroke="rgb(130,130,130)" stroke-width="1" stroke-linecap="round" stroke-dasharray="4,4"/>
+		</Rule>
+		<Rule>
+			<MinScaleDenominator>13001</MinScaleDenominator>
+			<MaxScaleDenominator>24000</MaxScaleDenominator>
+            <Filter>[grmn_type]='TRAIL'</Filter>
+            <LineSymbolizer stroke="rgb(130,130,130)" stroke-width="1" stroke-linecap="round" stroke-dasharray="2,4"/>
+		</Rule>
+		<Rule>
+			<MaxScaleDenominator>13000</MaxScaleDenominator>
+            <Filter>[grmn_type]='FERRY'</Filter>
+			<LineSymbolizer stroke="rgb(0,38,115)" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="4,2"/>
+		</Rule>	
+		<Rule>
+			<MaxScaleDenominator>13000</MaxScaleDenominator>
+            <Filter>[grmn_type]='ARTERIAL'or [grmn_type]='OTHER_HWY'or [grmn_type]='HIGH_SPEED_RAMP' or [grmn_type]='MAJOR_CONNECTOR'or [grmn_type]='ROUNDABOUT'</Filter>
+            <LineSymbolizer stroke="rgb(255,238,153)" stroke-width="4.4" stroke-linecap="round"/>
+		</Rule>
+		<Rule>
+			<MaxScaleDenominator>13000</MaxScaleDenominator>
+            <Filter>[grmn_type]='COLLECTOR'</Filter>
+            <LineSymbolizer stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+		</Rule>
+		<Rule>
+			<MaxScaleDenominator>13000</MaxScaleDenominator>
+            <Filter>[grmn_type]='DRIVEWAY_CUST'</Filter>
+            <LineSymbolizer stroke="rgb(130,130,130)" stroke-width="3" stroke-linecap="round"/>
+		</Rule>
+		<Rule>
+			<MaxScaleDenominator>13000</MaxScaleDenominator>
+			<Filter>[grmn_type]='RESIDENTIAL'or [grmn_type]='LOW_SPEED_RAMP'</Filter>
+			<LineSymbolizer stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+		</Rule>
+		<Rule>
+			<MinScaleDenominator>6001</MinScaleDenominator>
+			<MaxScaleDenominator>13000</MaxScaleDenominator>
+            <Filter>[grmn_type]='MAJOR_HWY'</Filter>
+			<LineSymbolizer stroke="rgb(230,0,0)" stroke-width="6" stroke-linecap="round"/>
+		</Rule>
+		<Rule>
+			<MaxScaleDenominator>13000</MaxScaleDenominator>
+            <Filter>[grmn_type]='PRINCIPAL_HWY'</Filter>
+            <LineSymbolizer stroke="rgb(255,238,153)" stroke-width="4.8" stroke-linecap="round"/>
+		</Rule>
+		<Rule>
+			<MaxScaleDenominator>13000</MaxScaleDenominator>
+            <Filter>[grmn_type]='IMPROVED_UNPAVED_ROAD'</Filter>
+            <LineSymbolizer stroke="rgb(130,130,130)" stroke-width="2" stroke-linecap="round"/>
+		</Rule>
+		<Rule>
+			<MaxScaleDenominator>13000</MaxScaleDenominator>
+            <Filter>[grmn_type]='UNPAVED_ROAD'</Filter>
+            <LineSymbolizer stroke="rgb(130,130,130)" stroke-width="1" stroke-linecap="round"/>
+		</Rule>
+		<Rule>
+			<MaxScaleDenominator>13000</MaxScaleDenominator>
+            <Filter>[grmn_type]='TRAIL'</Filter>
+            <LineSymbolizer stroke="rgb(130,130,130)" stroke-width="1" stroke-linecap="round" stroke-dasharray="4,4"/>
+		</Rule>
+		<Rule>
+			<MaxScaleDenominator>6000</MaxScaleDenominator>
+            <Filter>[grmn_type]='MAJOR_HWY'</Filter>
+			<LineSymbolizer stroke="rgb(230,0,0)" stroke-width="7" stroke-linecap="round"/>
+		</Rule>
+		<Rule>
+			<MaxScaleDenominator>13000</MaxScaleDenominator>
+            <Filter>[grmn_type]='ALLEY'</Filter>
+            <LineSymbolizer stroke="rgb(68,137,112)" stroke-width="1" stroke-linecap="round"/>
+		</Rule>
+    </Style>
+	<Style name="ROADS_text">
+		<Rule>
+			<MinScaleDenominator>200001</MinScaleDenominator>
+			<MaxScaleDenominator>380000</MaxScaleDenominator>
+			<Filter>[grmn_type]='MAJOR_HWY'or [grmn_type]='PRINCIPAL_HWY' or [grmn_type]='ARTERIAL'</Filter>
+			<TextSymbolizer face-name="Calibri Bold" size="10" fill="rgb(78,78,78)" halo-fill= "white" halo-radius="1" placement="line">[strt_addr]</TextSymbolizer>
+        </Rule>
+		<Rule>
+			<MinScaleDenominator>24001</MinScaleDenominator>
+			<MaxScaleDenominator>200000</MaxScaleDenominator>
+			<Filter>[grmn_type]='MAJOR_HWY'or [grmn_type]='PRINCIPAL_HWY' or [grmn_type]='ARTERIAL'</Filter>
+			<TextSymbolizer face-name="Calibri Bold" size="11" fill="rgb(78,78,78)" halo-fill= "white" halo-radius="1" placement="line">[strt_addr]</TextSymbolizer>
+        </Rule>
+		<Rule>
+			<MinScaleDenominator>13001</MinScaleDenominator>
+			<MaxScaleDenominator>24000</MaxScaleDenominator>
+			<Filter>[grmn_type]='MAJOR_HWY'or [grmn_type]='PRINCIPAL_HWY' or [grmn_type]='ARTERIAL'or [grmn_type]='OTHER_HWY'</Filter>
+			<TextSymbolizer face-name="Calibri Bold" size="12" fill="rgb(78,78,78)" halo-fill= "white" halo-radius="1" placement="line">[strt_addr]</TextSymbolizer>
+        </Rule>
+		<Rule>
+			<MinScaleDenominator>6001</MinScaleDenominator>
+			<MaxScaleDenominator>13000</MaxScaleDenominator>
+			<TextSymbolizer face-name="Calibri Bold" size="12" fill="rgb(78,78,78)" halo-fill= "white" halo-radius="1" placement="line">[strt_addr]</TextSymbolizer>
+        </Rule>
+		<Rule>
+			<MaxScaleDenominator>6000</MaxScaleDenominator>
+			<TextSymbolizer face-name="Calibri Bold" size="13" fill="rgb(78,78,78)" halo-fill= "white" halo-radius="1" placement="line">[strt_addr]</TextSymbolizer>
+        </Rule>
+	</Style>	
+	<Style name="LINES_BACKGROUND">
+		<Rule>
+			<Filter>[grmn_type]='RAILROAD' or [grmn_type]='RAILROAD_CUST' or [grmn_type]='RAILWAY_NARROW'</Filter>
+			<LineSymbolizer stroke="black" stroke-width="2.0" stroke-linecap="round"/>
+        </Rule>
+    </Style>
+	<Style name="LINES">
+		<Rule>
+			<Filter>[grmn_type]='RAILROAD' or [grmn_type]='RAILROAD_CUST' or [grmn_type]='RAILWAY_NARROW'</Filter>
+			<LineSymbolizer stroke="white" stroke-width="1.9" stroke-linecap="round" stroke-dasharray="7,7"/>
+        </Rule>
+		<Rule>
+			<Filter>[grmn_type]='TRAMWAY'</Filter>
+			<LineSymbolizer stroke="rgb(252,187,193)" stroke-width="1.9" stroke-linecap="round" stroke-dasharray="4,4"/>
+        </Rule>
+    </Style>
+	<Style name="BOUNDS_BACKGROUND">
+		<Rule>
+			<Filter>[grmn_type]='MJR_PLTCL_BDRY'</Filter>
+			<LineSymbolizer stroke="rgb(255,190,232)" stroke-width="4.0" stroke-linecap="round"/>
+        </Rule>
+		<Rule>
+			<Filter>[grmn_type]='MNR_PLTCL_BDRY'</Filter>
+			<LineSymbolizer stroke="rgb(255,190,232)" stroke-width="2.0" stroke-linecap="round"/>
+        </Rule>
+		<Rule>
+			<Filter>[grmn_type]='CITY_PLTCL_BDRY'</Filter>
+			<LineSymbolizer stroke="rgb(255,190,232)" stroke-width="1.0" stroke-linecap="round"/>
+        </Rule>
+    </Style>
+	<Style name="BOUNDS">
+		<Rule>
+			<LineSymbolizer stroke="black" stroke-width="0.4" stroke-linecap="round" stroke-dasharray="4,4"/>
+        </Rule>
+  </Style>
+	<Style name="CITY">
+		<Rule>
+			<MinScaleDenominator>50001</MinScaleDenominator>
+			<Filter>[status]='STATE_CAPITAL'</Filter>
+			<TextSymbolizer face-name="Arial Bold" size="16" fill="rgb(137,112,68)" halo-fill= "white" halo-radius="1" placement="point" allow-overlap="false">[city]</TextSymbolizer>
+		</Rule>
+		<Rule>
+			<MinScaleDenominator>50001</MinScaleDenominator>
+			<Filter>[status]='TOWN'</Filter>
+			<TextSymbolizer face-name="Arial Bold Italic" size="14" fill="rgb(137,112,68)" halo-fill= "white" halo-radius="1" placement="point" allow-overlap="false">[city]</TextSymbolizer>
+		</Rule>
+		<Rule>
+			<MinScaleDenominator>100001</MinScaleDenominator>
+			<MaxScaleDenominator>200000</MaxScaleDenominator>
+			<Filter>[status]!= 'STATE_CAPITAL'and [status]!= 'TOWN'</Filter>
+			<TextSymbolizer face-name="Arial Bold Italic" size="9" fill="rgb(137,112,68)" halo-fill= "white" halo-radius="1" placement="point" allow-overlap="false">[city]</TextSymbolizer>
+		</Rule>
+		<Rule>
+			<MinScaleDenominator>50001</MinScaleDenominator>
+			<MaxScaleDenominator>100000</MaxScaleDenominator>
+			<Filter>[status]!= 'STATE_CAPITAL'and [status]!= 'TOWN'</Filter>
+			<TextSymbolizer face-name="Arial Bold Italic" size="10" fill="rgb(137,112,68)" halo-fill= "white" halo-radius="1" placement="point" allow-overlap="false">[city]</TextSymbolizer>
+		</Rule>
+		<Rule>
+			<MinScaleDenominator>13001</MinScaleDenominator>
+			<MaxScaleDenominator>50000</MaxScaleDenominator>
+			<TextSymbolizer face-name="Arial Bold Italic" size="11" fill="rgb(137,112,68)" halo-fill= "white" halo-radius="1" placement="point" allow-overlap="false">[city]</TextSymbolizer>
+		</Rule>
+		<Rule>
+			<MinScaleDenominator>6001</MinScaleDenominator>
+			<MaxScaleDenominator>13000</MaxScaleDenominator>
+			<TextSymbolizer face-name="Arial Bold Italic" size="12" fill="rgb(137,112,68)" halo-fill= "white" halo-radius="1" placement="point" allow-overlap="false">[city]</TextSymbolizer>
+		</Rule>
+		<Rule>
+			<MaxScaleDenominator>6000</MaxScaleDenominator>
+			<TextSymbolizer face-name="Arial Bold Italic" size="13" fill="rgb(137,112,68)" halo-fill= "white" halo-radius="1" placement="point" allow-overlap="false">[city]</TextSymbolizer>
+		</Rule>
+	</Style>
+	<Style name="HOUSE POINTS">
+		<Rule>
+			<MinScaleDenominator>6001</MinScaleDenominator>
+			<MaxScaleDenominator>13000</MaxScaleDenominator>
+			<TextSymbolizer face-name="Arial Bold" size="6" fill="rgb(78,78,78)" placement="point" allow-overlap="false">[house_num]</TextSymbolizer>
+        </Rule>
+		<Rule>
+			<MaxScaleDenominator>6000</MaxScaleDenominator>
+			<TextSymbolizer face-name="Arial Bold" size="7" fill="rgb(78,78,78)" placement="point" allow-overlap="false">[house_num]</TextSymbolizer>
+        </Rule>
+    </Style>
+	<!-- LAYERS -->
+	 <Layer name="LAND" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
+        <StyleName>LAND</StyleName>
+        <Datasource>
+            <Parameter name="file">E:\_RENDER_MAP_TILES\LIPETS_20151029_BY_IGOR\Lipetsk_5_40\OTHER_A</Parameter>
+            <Parameter name="row_limit">0</Parameter>
+            <Parameter name="type">shape</Parameter>
+        </Datasource>
+	</Layer>
+	<Layer name="VEGETATION" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
+        <StyleName>VEGETATION</StyleName>
+        <Datasource>
+            <Parameter name="file">E:\_RENDER_MAP_TILES\LIPETS_20151029_BY_IGOR\Lipetsk_5_40\VEGETATION</Parameter>
+            <Parameter name="row_limit">0</Parameter>
+            <Parameter name="type">shape</Parameter>
+        </Datasource>
+    </Layer>
+	<Layer name="SEA" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
+        <StyleName>SEA</StyleName>
+		<StyleName>SEA_text</StyleName>
+        <Datasource>
+            <Parameter name="file">E:\_RENDER_MAP_TILES\LIPETS_20151029_BY_IGOR\Lipetsk_5_40\HYDRO_A</Parameter>
+            <Parameter name="row_limit">0</Parameter>
+			<Parameter name="type">shape</Parameter>
+			<Parameter name="encoding">windows-1251</Parameter>
+        </Datasource>
+    </Layer>
+	<Layer name="RIVER" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
+   		<StyleName>RIVER</StyleName>
+		<StyleName>RIVER_text</StyleName>
+        <Datasource>
+            <Parameter name="file">E:\_RENDER_MAP_TILES\LIPETS_20151029_BY_IGOR\Lipetsk_5_40\HYDRO_L</Parameter>
+            <Parameter name="row_limit">0</Parameter>
+            <Parameter name="type">shape</Parameter>
+			<Parameter name="encoding">windows-1251</Parameter>
+        </Datasource>
+    </Layer>
+	<Layer name="BUILDING" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
+        <StyleName>BUILDING</StyleName>
+        <Datasource>
+            <Parameter name="file">E:\_RENDER_MAP_TILES\LIPETS_20151029_BY_IGOR\Lipetsk_5_40\OTHER_AH</Parameter>
+            <Parameter name="row_limit">0</Parameter>
+            <Parameter name="type">shape</Parameter>
+        </Datasource>
+	</Layer>
+	<Layer name="ROADS" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs ">
+        <StyleName>ROADS_BACKGROUND</StyleName>
+        <StyleName>ROADS</StyleName>
+		<StyleName>ROADS_text</StyleName>
+        <Datasource>
+            <Parameter name="file">E:\_RENDER_MAP_TILES\LIPETS_20151029_BY_IGOR\Lipetsk_5_40\ROADS</Parameter>
+            <Parameter name="row_limit">0</Parameter>
+            <Parameter name="type">shape</Parameter>
+			<Parameter name="encoding">windows-1251</Parameter>
+        </Datasource>
+    </Layer>
+	<Layer name="LINES" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs ">
+        <StyleName>LINES_BACKGROUND</StyleName>
+		<StyleName>LINES</StyleName>
+        <Datasource>
+            <Parameter name="file">E:\_RENDER_MAP_TILES\LIPETS_20151029_BY_IGOR\Lipetsk_5_40\OTHER_L</Parameter>
+            <Parameter name="row_limit">0</Parameter>
+            <Parameter name="type">shape</Parameter>
+        </Datasource>
+    </Layer>
+	<Layer name="BOUNDS" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs ">
+        <StyleName>BOUNDS_BACKGROUND</StyleName>
+		<StyleName>BOUNDS</StyleName>
+        <Datasource>
+            <Parameter name="file">E:\_RENDER_MAP_TILES\LIPETS_20151029_BY_IGOR\Lipetsk_5_40\BOUNDS</Parameter>
+            <Parameter name="row_limit">0</Parameter>
+            <Parameter name="type">shape</Parameter>
+        </Datasource>
+    </Layer>
+	<Layer name="CITY" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs ">
+        <StyleName>CITY</StyleName>
+        <Datasource>
+            <Parameter name="file">E:\_RENDER_MAP_TILES\LIPETS_20151029_BY_IGOR\Lipetsk_5_40\CITY</Parameter>
+            <Parameter name="row_limit">0</Parameter>
+            <Parameter name="type">shape</Parameter>
+            <Parameter name="encoding">windows-1251</Parameter>
+        </Datasource>
+    </Layer>
+	<Layer name="HOUSE POINTS" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs ">
+        <StyleName>HOUSE POINTS</StyleName>
+        <Datasource>
+            <Parameter name="file">E:\_RENDER_MAP_TILES\LIPETS_20151029_BY_IGOR\Lipetsk_5_40\HOUSE</Parameter>
+            <Parameter name="row_limit">0</Parameter>
+            <Parameter name="type">shape</Parameter>
+            <Parameter name="encoding">windows-1251</Parameter>
+        </Datasource>
+    </Layer>
+</Map>

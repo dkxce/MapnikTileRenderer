@@ -1,0 +1,354 @@
+﻿<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Mapnik Simple Map Creator - Tiles</title>
+		<meta name="description" content="NMS - Navicom Map Services Demo" />
+		<meta name="description" content="dkxce.Routes" />
+		<link rel="stylesheet" href="leaflet/leaflet.css" />
+		<!--[if lte IE 8]>
+			<link rel="stylesheet" href="leaflet/leaflet.ie.css" />
+			<link rel="stylesheet" href="leaflet/L.Control.Zoomslider/L.Control.Zoomslider.ie.css" />
+		<![endif]-->		
+		<script src="leaflet/leaflet.js"></script>		
+		<link rel="stylesheet" href="leaflet/L.Control.Zoomslider/L.Control.Zoomslider.css" />		
+		<script src="leaflet/L.Control.Zoomslider/L.Control.Zoomslider.js"></script>			
+		<style>
+			html, body, #map { height: 100%; width: 100%; margin: 0; padding: 0; }
+			#sfield { border: none; position: absolute; width: 300px; height: 22px; z-index: 100; top: 13px; left: 50px;}
+			#toFind { border: solid 1px gray; width: 200px; }
+			#sares { height: 180px; }
+			#sart { color: maroon; border-bottom: dashed 1px silver; }
+			#btn { border: solid 1px gray; }
+			#map { cursor: crosshair; }
+			.leaflet-tile {  }
+		</style> 
+	</head>
+	
+	<body>
+		<div id="sfield">
+			&nbsp; Найти: <input id="toFind" name="toFind" type="text" value="Липецк, Октября 1"/>
+			<input id="btn" type="button" onclick="find()" value="->"/>
+		</div>
+		<div id="map" style="width: 100%; height: 100%;"></div>
+	</body>
+	<script>
+		var fullhash = document.location.hash;
+		var trafficOn = document.location.search.indexOf('traffic') > 0;
+		var hashkey = fullhash.substr(1,this.fullhash.length-1);
+		var cod = (hashkey == null) || (hashkey == '') ? 'TEST' : hashkey;		
+		var map = L.map('map', {center: [52.58065,39.51994], zoom: 10, zoomControl: false, zoomsliderControl: true});
+		var getRouteInstructions = false;
+		var rgicc = function(){ getRouteInstructions = !getRouteInstructions; GetRoute(); };
+		
+		try
+		{	// -- http://maps.navicom.ru/nms/exRouteV3.html?{lat:55.68,lon:37.68,zoom:14,traffic:1}
+			var search = document.location.search.substr(1,document.location.search.length-1);
+			var searchJSON = (new Function("","return "+search+";"))();
+			var cco = new L.LatLng(searchJSON.lat, searchJSON.lon);
+			map.setView(cco, searchJSON.zoom);
+		} catch (e) {};
+
+		// варианты функций, учитывающие возможность назначения разных проекции карте и части слоев
+		var project = function (map, crs, latlng) {
+			return crs.latLngToPoint(latlng, map.getZoom());
+		};
+
+		L.TileLayer.prototype._update = function () {
+			var bounds = this._map.getPixelBounds(),
+				zoom = this._map.getZoom(),
+				tileSize = this.options.tileSize;
+
+			if (typeof this.options.crs !== 'undefined') {
+				bounds.min = project(this._map, this.options.crs, this._map.unproject(bounds.min));
+				bounds.max = project(this._map, this.options.crs, this._map.unproject(bounds.max));
+			}
+
+			if (zoom > this.options.maxZoom || zoom < this.options.minZoom) {
+				return;
+			}
+
+			var nwTilePoint = new L.Point(
+					Math.floor(bounds.min.x / tileSize),
+					Math.floor(bounds.min.y / tileSize)),
+				seTilePoint = new L.Point(
+					Math.floor(bounds.max.x / tileSize),
+					Math.floor(bounds.max.y / tileSize)),
+				tileBounds = new L.Bounds(nwTilePoint, seTilePoint);
+
+			this._addTilesFromCenterOut(tileBounds);
+
+			if (this.options.unloadInvisibleTiles || this.options.reuseTiles) {
+				this._removeOtherTiles(tileBounds);
+			}
+		};
+
+		L.TileLayer.prototype._getTilePos = function (tilePoint) {			
+			var origin = this._map.getPixelOrigin(),
+				tileSize = this.options.tileSize;
+
+			if (typeof this.options.crs !== 'undefined') {
+				origin = project(this._map, this.options.crs, this._map.unproject(origin));
+			}
+	
+			return tilePoint.multiplyBy(tileSize).subtract(origin);
+		};
+		
+		var navicomMaps = L.tileLayer('http://maps.navicom.ru/nms/getTile.ashx?'+cod+';{x};{y};{z};', { maxZoom: 17, attribution: 'Maps &copy; <a href="http://www.navicom.ru">ЗАО Навиком</a>' });
+		var navicomWMS = L.tileLayer.wms("http://maps.navicom.ru/nms/getMapWMS.ashx?key="+cod, { layers: 'default', format: 'image/png', transparent: true, attribution: 'Maps &copy; <a href="http://www.navicom.ru">ЗАО Навиком</a>'});
+		var MapnikSimpleMapCreator = L.tileLayer.wms("http://127.0.0.1:7759/?", { layers: 'default', format: 'image/png', transparent: true, attribution: 'MapnikSimpleMapCreator'});
+		var MapnikSimpleMapCreator2 = L.tileLayer("http://127.0.0.1:7759/?SRS=TILE&CLEAR=1&XYZ={x},{y},{z}", { layers: 'default', format: 'image/png', transparent: true, attribution: 'MapnikSimpleMapCreator'});
+		var mapnik = L.tileLayer('http://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 17, attribution: 'Maps &copy; <a href="http://openstreetmap.org">OSM</a>' });		
+		var GoogleMapOverlayLayer = new L.TileLayer('http://{s}.google.com/vt/lyrs=h@177000000&hl=ru&src=app&x={x}&s=&y={y}&z={z}&s=G', {attribution: 'Data, imagery and map information provided by <a href="http://maps.google.com" target="_blank">Google</a>', maxZoom: 19, subdomains: ['mts0','mts1'], zIndex: 4});
+		var GoogleTrafficLayer = new L.TileLayer('http://{s}.google.com/vt?hl=ru&src=app&lyrs=m@177000000,traffic|seconds_into_week:-1&x={x}&s=&y={y}&z={z}&style=15', {attribution: 'Traffic data provided by <a href="http://maps.google.com" target="_blank">Google</a>', maxZoom: 19, subdomains: ['mts0','mts1'], traffic: true, zIndex: 21});
+		var YandexTrafficLayer = new L.TileLayer('http://jgo.maps.yandex.net/tiles?l=trf&lang=ru-RU&x={x}&s=&y={y}&z={z}', {attribution: 'Traffic data provided by <a href="http://maps.yandex.ru" target="_blank">Yandex</a>', maxZoom: 17, crs: L.CRS.EPSG3395, traffic: true, zIndex: 22});
+		var YandexExtTrafficLayer = new L.TileLayer('http://jgo.maps.yandex.net/tiles?l=trf,trfe&lang=ru-RU&x={x}&s=&y={y}&z={z}', {attribution: 'Traffic data provided by <a href="http://maps.yandex.ru" target="_blank">Yandex</a>', maxZoom: 17, crs: L.CRS.EPSG3395, traffic: true, zIndex: 23});
+		var YandexMapLayer = new L.TileLayer('http://{s}.maps.yandex.net/tiles?l=map&v=2.31.1&x={x}&s=&y={y}&z={z}&lang=ru-RU', {attribution: 'Data, imagery and map information provided by <a href="http://maps.yandex.ru" target="_blank">Yandex</a>', subdomains: ['vec01','vec02','vec03','vec04'], maxZoom: 17, crs: L.CRS.EPSG3395, zIndex: 5});
+	
+
+		var upTrafficYa = function (tilePoint, zoom) {
+			var tm = new Date();
+			var url = L.TileLayer.prototype.getTileUrl.call(this, tilePoint, zoom);
+			return url + '&tm=' + parseInt(tm.getTime()/1000, 10);
+		};
+		YandexTrafficLayer.getTileUrl = upTrafficYa;
+		YandexExtTrafficLayer.getTileUrl = upTrafficYa;
+
+		navicomMaps.addTo(map);	// default	
+		var basemaps = {					
+				  "Navicom": navicomMaps,
+				  "Navicom WMS": navicomWMS,
+				  '<b style="color:maroon;">TEST 127.0.0.1:7759 BBOX</b>': MapnikSimpleMapCreator,				  
+				  "OSM Mapnik": mapnik,
+				  "Яндекс": YandexMapLayer
+				  };
+		var trafficLayers = {
+					'<b style="color:navy;">TEST 127.0.0.1:7759 XYZ</b>': MapnikSimpleMapCreator2,
+					"Пробки Google": GoogleTrafficLayer,
+    				 "Пробки Яндекс": YandexTrafficLayer,
+    				 "Пробки и События Яндекс": YandexExtTrafficLayer
+					 };
+		L.control.layers(basemaps, trafficLayers).addTo(map);
+		if(trafficOn) YandexExtTrafficLayer.addTo(map);
+		
+		var cc = 0; // click counter
+		var fc; // first click
+		var sc; // second click
+		
+		var m1 = null; // start marker
+		var m2 = null; // end marker
+		var im = null; // instructions marker
+		
+		var path = null; // polyline
+		var ctx = ''; // route context description
+		var res = null; // route result
+		
+		var iconStart = L.icon({ iconUrl: 'mapMarkerS.png', iconSize: [20, 32], iconAnchor: [10, 32], popupAnchor: [10, 10] });
+		var iconEnd = L.icon({ iconUrl: 'mapMarkerF.png', iconSize: [20, 32], iconAnchor: [10, 32], popupAnchor: [10, 10] });
+		var iconIndex = L.icon({ iconUrl: 'mapMarkeri.png', iconSize: [20, 32], iconAnchor: [10, 32], popupAnchor: [10, 10] });
+		var popup = null;
+		
+		map.on('click', function(e) {			
+			///////
+			
+					cc++;					
+					if(cc == 3) { cc = 1; };
+					if (cc == 1) 
+					{					
+						fc = e.latlng;
+						if(m1 != null) 
+							m1.setLatLng(fc);
+						else
+						{
+							m1 = new L.Marker(e.latlng,{icon:iconStart, draggable: true});
+							m1.addTo(map);
+							m1.on('dragstart', function(e) { }); 
+							m1.on('drag', function(e) { fc = m1.getLatLng();  }); 
+							m1.on('dragend', function(e) {
+								fc = m1.getLatLng();
+								if(sc === undefined) return;
+								GetRoute();
+							});
+						};
+					};
+					if (cc == 2) 
+					{
+						sc = e.latlng;
+						if(m2 != null) 
+							m2.setLatLng(sc);
+						else
+						{
+							m2 = L.marker(e.latlng,{icon:iconEnd, draggable: true});							
+							m2.addTo(map);
+							m2.on('dragstart', function(e) { }); 
+							m2.on('drag', function(e) { sc = m2.getLatLng();  }); 
+							m2.on('dragend', function(e) {
+								sc = m2.getLatLng();								
+								GetRoute();
+							});
+							m2.on('click', function(e) {								
+								popup = L.popup({maxWidth:400}).setLatLng(e.latlng).setContent(ctx);//.addTo(map);
+								map.openPopup(popup);
+							});
+						};											
+					};
+					
+					if((m1 != null) && (m2 != null))
+					{
+						GetRoute();
+					};
+			///////
+		});
+		
+		function GetRoute()
+		{
+			if(im != null) map.removeLayer(im);
+			im = null;
+			
+			var url = 'sroute.ashx?k='+cod+'&f=json&i='+(getRouteInstructions ? '1' : '0')+'&x='+fc.lng+','+sc.lng+'&y='+fc.lat+','+sc.lat+'&n=start,finish';
+			var xml = 'sroute.ashx?k='+cod+'&f=xml&i='+(getRouteInstructions ? '1' : '0')+'&x='+fc.lng+','+sc.lng+'&y='+fc.lat+','+sc.lat+'&n=start,finish';
+			var kml = 'sroute.ashx?k='+cod+'&f=kml&i='+(getRouteInstructions ? '1' : '0')+'&x='+fc.lng+','+sc.lng+'&y='+fc.lat+','+sc.lat+'&n=start,finish';
+			res = openFile(url);
+			res = new Function('','return '+res)();
+						
+			// ERROR
+			if(res.LastError.length > 0) { alert(res.LastError); return; };
+						
+			// DESCRIPTION
+			ctx = '<b>Маршрут:</b><br/>Длина: '+(res.driveLength/1000)+' км<br/>Время: '+res.driveTime+' мин<br/>Выезд: '+res.startTime+'<br/>Прибытие: '+res.finishTime+'<br/>Доступные форматы: '+
+			'<a href="'+url+'" target="_blank">JSON</a>, '+
+			'<a href="'+xml+'" target="_blank">XML</a>, '+
+			'<a href="'+kml+'" target="_blank">KML</a> '+
+			'<br/>Нужны другие форматы? - <a href="http://www.benichou-software.com/" target="_blank">ITN Converter</a>'+
+			'&nbsp;&nbsp;&nbsp;<br/><br/><b>Описание (<a id="rgic" href="#" onclick="rgicc();return false;">вкл/выкл</a>):</b><div style="font-size:0px;height:1px;background:silver;"></div>';
+			for(var i=0;i<res.instructions.length;i++)
+			{
+				ctx += '<b>['+res.instructions[i].no+']</b> <a href="#" onclick="SM('+i+');return false;">'+res.instructions[i].y+' '+res.instructions[i].x+'</a> '+res.instructions[i].iStreet+'<br/>';
+				if(res.instructions[i].iToDo.length > 0) ctx += res.instructions[i].iToDo+'<br/>';
+				if(res.instructions[i].iToGo.length > 0) ctx += res.instructions[i].iToGo+'<br/>';
+				ctx += '<div style="font-size:0px;height:1px;background:silver;"></div>';
+			};
+			if(popup != null) { 
+				popup.setContent(ctx); 
+				popup.setLatLng(m2.getLatLng());
+			};
+				
+			// PATH						
+			var xy = [];
+			for(var i=0;i<res.polyline.length;i++) xy[i] = new L.LatLng(res.polyline[i].y, res.polyline[i].x);
+			if(path != null) 
+				path.setLatLngs(xy);
+			else
+			{
+				path = new L.polyline(xy, {color: '#FF00F0', clickable: false, opacity: 0.7});
+				path.addTo(map);
+			};
+		}
+		
+		function SM(index)
+		{
+			var cco = new L.LatLng(res.instructions[index].y, res.instructions[index].x);
+			if(im != null)
+				im.setLatLng(cco);
+			else
+			{
+				im = new L.Marker(cco,{icon:iconIndex,clickable:true});
+				im.on('click', function(e) { map.openPopup(popup); });
+				map.addLayer(im);
+			};
+		}
+		
+		function openFile(url)
+	{
+		try  {
+			netscape.security.PrivilegeManager.enablePrivilege("UniversalBrowserRead");
+			//netscape.security.PrivilegeManager.enablePrivilege("UniversalBrowserAccess");
+		} catch (e) {};
+
+   
+		var httpReq = false;
+		if (typeof XMLHttpRequest!='undefined') {
+			httpReq = new XMLHttpRequest();
+		} else {
+			try {
+				httpReq = new ActiveXObject("Msxml2.XMLHTTP.4.0");
+			} catch (e) {
+				try {
+					httpReq = new ActiveXObject("Msxml2.XMLHTTP");
+				} catch (ee) {
+					try {
+						httpReq = new ActiveXObject("Microsoft.XMLHTTP");
+					} catch (eee) {
+						httpReq = false;
+					}
+				}
+			}
+		}
+		httpReq.open("GET", url, false);
+		httpReq.setRequestHeader('Content-Type', 'text/xml');
+		if((navigator.userAgent.indexOf('Chrome') < 0) && (navigator.userAgent.indexOf('Safari') < 0))
+		  httpReq.setRequestHeader("Content-length", 0);
+		httpReq.send(null);
+		if (httpReq.status == 200) {return httpReq.responseText;} else
+		{
+			if (httpReq.status == 500) alert("Server Exception: "+httpReq.responseText);
+			return httpReq.status;
+		};
+	}
+	
+	function find()
+	{
+		var t2f = document.getElementById("toFind").value;
+		var url = 'saddr.ashx?k='+cod+'&f=j&wts=hsc&n=0&s='+escape(t2f);
+		res = openFile(url);
+		res = new Function('','return '+res)();
+		
+		// ERROR
+		if(res.LastError.length > 0) { alert(res.LastError); return; };
+		if(res.returned == 0) { alert('Ничего не найдено'); return; };
+						
+		var cco = new L.LatLng(res.records[0].y, res.records[0].x);
+		if(im != null)
+			im.setLatLng(cco);
+		else
+		{
+			im = new L.Marker(cco,{icon:iconIndex,clickable:true});
+			im.on('click', function(e) { map.openPopup(popup); });
+			map.addLayer(im);
+		};
+		map.setView(cco, 14);
+		//map.panTo(cco);
+		//map.setZoom(14);
+		
+		var ctx = 'Текущий адрес:<br/>&nbsp;<div id="sart">1: '+res.records[0].addr+'</div><br/> Всего найдено '+res.records.length+':<hr/><div id="sares">';
+		for(var i=0;i<res.records.length;i++) ctx += (i+1).toString()+': <a href="#" onclick="SA('+i+');;return false;">'+res.records[i].addr+'</a><br/>';
+		ctx += '</div>';
+		
+		if(popup == null) popup = L.popup({maxWidth:400});
+		popup.setContent(ctx); 
+		popup.setLatLng(cco);
+		map.openPopup(popup);
+	}
+	
+	function SA(index)
+	{
+		var cco = new L.LatLng(res.records[index].y, res.records[index].x);
+		if(im != null)
+			im.setLatLng(cco);
+		else
+		{
+			im = new L.Marker(cco,{icon:iconIndex,clickable:true});
+			im.on('click', function(e) { map.openPopup(popup); });
+			map.addLayer(im);
+		};		
+		map.panTo(cco);		
+		if(popup != null) popup.setLatLng(cco);
+		document.getElementById('sart').innerHTML = (index+1).toString()+': '+res.records[index].addr;
+	}	
+		
+		// only in [OLD]
+		function AddMarker1(lat,lon,id){}
+		function AddMarker2(lat,lon,id){}
+		function AddMarker3(lat,lon,id){}
+		function ClearMarkers(){}
+	</script>
+</html>

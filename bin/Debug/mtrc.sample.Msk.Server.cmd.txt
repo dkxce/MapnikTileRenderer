@@ -1,0 +1,2 @@
+rem mtrc.exe D:\__MAPNIK\msk.mtr_project /server 9666
+mtrc.exe D:\__MAPNIK\msk.mtr_project /server 9666 -task_msk_5_40

@@ -1,0 +1,45 @@
+Arial Black
+Arial Black Italic
+Arial Black Regular
+Arial Bold
+Arial Bold Italic
+Arial Italic
+Arial Narrow
+Arial Narrow Regular
+Arial Regular
+Arial Rounded MT Bold Regular
+Arial Unicode MS Regular
+Calibri Bold
+Calibri Bold Italic
+Calibri Italic
+Calibri Regular
+Comic Sans MS Bold
+DejaVu Sans Book
+PT Mono Bold
+PT Mono Regular
+PT Sans Bold
+PT Sans Bold Italic
+PT Sans Caption Bold
+PT Sans Caption Regular
+PT Sans Italic
+PT Sans Narrow Bold
+PT Sans Narrow Regular
+PT Sans Regular
+PT Serif Bold
+PT Serif Bold Italic
+PT Serif Caption Italic
+PT Serif Caption Regular
+PT Serif Italic
+PT Serif Regular
+Tahoma Bold
+Tahoma Regular
+Times Bold
+Times Bold Italic
+Times Italic
+Times New Roman Bold
+Times New Roman Bold Italic
+Times New Roman Italic
+Times Roman
+Verdana Bold
+Verdana Italic
+Verdana Regular

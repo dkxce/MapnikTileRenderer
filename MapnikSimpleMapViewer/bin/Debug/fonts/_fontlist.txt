@@ -1,0 +1,24 @@
+Arial Black
+Arial Black Italic
+Arial Black Regular
+Arial Bold
+Arial Bold Italic
+Arial Italic
+Arial Narrow
+Arial Narrow Regular
+Arial Regular
+Arial Rounded MT Bold Regular
+Arial Unicode MS Regular
+Calibri Bold
+Calibri Bold Italic
+Calibri Italic
+Calibri Regular
+Comic Sans MS Bold
+DejaVu Sans Book
+Times Bold
+Times Bold Italic
+Times Italic
+Times New Roman Bold
+Times New Roman Bold Italic
+Times New Roman Italic
+Times Roman

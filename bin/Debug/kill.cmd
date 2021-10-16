@@ -1,0 +1,1 @@
+nircmd.exe killprocess MapnikTileRenderer.exe

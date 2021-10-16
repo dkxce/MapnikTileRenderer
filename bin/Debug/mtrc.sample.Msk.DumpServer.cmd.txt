@@ -1,0 +1,2 @@
+rem mtrc.exe D:\__MAPNIK\msk.mtr_project /dumpserver 9666 LOGS\current.dump
+mtrc.exe D:\__MAPNIK\msk.mtr_project /dumpserver 9666 LOGS\current.dump -task_msk_5_40

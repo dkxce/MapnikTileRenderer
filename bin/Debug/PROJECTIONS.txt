@@ -1,0 +1,36 @@
+http://gis-lab.info/qa/mapnik.html
+http://spatialreference.org/
+http://trac.osgeo.org/proj/wiki/GenParms
+
+Projections:
+	(For Tiles)
+	EPSG:3857 / SR-ORG:7483 / EPSG:900913 / WGS84 Web Mercator (Auxiliary Sphere, Spherical Mercator)
+	Projection used in many popular web mapping applications (Google/Bing/OpenStreetMap/etc)
+		Url: http://spatialreference.org/ref/sr-org/7483/
+		Proj4: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +k=1.0 +x_0=0.0 +y_0=0.0 +units=m +no_defs +nadgrids=@null +wktext  
+		Proj4: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +k=1.0 +x_0=0.0 +y_0=0.0 +units=m +no_defs +nadgrids=@null +over
+	
+	(For Addresses & Routes)
+	EPSG:4326 / SR-ORG:14 / WGS 84
+		Url: http://spatialreference.org/ref/epsg/4326/
+		Url: http://spatialreference.org/ref/sr-org/14/
+	  in Lat/Lon
+		Proj4: +proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs 
+	  in meters
+		Proj4: +proj=latlong +datum=WGS84 +k=1.0 +units=m +no_defs +over 
+		
+	(For Tiles by ArcGIS)
+	SR-ORG:45 / WGS 1984 Web Mercator
+	The ESRI definition for a spherical Mercator based upon the WGS84 semimajor axis
+		Url: http://spatialreference.org/ref/sr-org/45/
+		Proj4: +proj=merc +a=6378137 +b=6378137 +lon_0=0 +k=1.0 +x_0=0.0 +y_0=0.0 +units=m +no_defs 
+	    
+	
+	SR-ORG:16 / Mercator (world) / This is the GoogleEarth, Virtual Earth projection
+		Url: http://spatialreference.org/ref/sr-org/16/
+		Proj4: +proj=merc +lon_0=0 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs 
+		
+	EPSG:32617 / SR-ORG:13 / WGS 1984 UTM Zone 17N / 
+		Url: http://spatialreference.org/ref/epsg/wgs-84-utm-zone-17n/
+		Url: http://spatialreference.org/ref/sr-org/13/
+		Proj4: +proj=utm +zone=17 +ellps=WGS84 +datum=WGS84 +units=m +no_defs 			
