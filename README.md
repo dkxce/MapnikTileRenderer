@@ -30,6 +30,8 @@ In local mode, all slicing is done stand alone.
 
 В локальном режиме вся нарезка выполняется одним приложнием.
 
+You can use it for create map tiles line Google/OSM
+
 Main Window:    
 <img src="window1.png"/>
 <img src="window2.png"/>      
