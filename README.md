@@ -1,4 +1,4 @@
-# MapnikTileRenderer-bin-
+# Mapnik Tile Renderer
 
 Mapnik Tile Render to render 256x256pixel map tiles in server-clients mode with network support
 
