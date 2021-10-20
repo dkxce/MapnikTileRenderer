@@ -2,6 +2,19 @@
 
 Mapnik Tile Render to render 256x256pixel map tiles in server-clients mode with network support
 
+Supports local and network modes:
+
+In network mode, the server distributes cutting tasks between connected clients,
+which, in turn, cut the required squares and put the tiles in the storage.
+In the event of a slicing error at the client, the server re-sends several times
+the same task to eliminate network errors. Server and clients are started separately, as
+on one or several different computers. This architecture one server - many
+clients can significantly reduce the time for cutting large maps, because can be dynamically
+connect and disconnect clients as free computers appear. For example, you can
+use this scheme at night when most office computers are idle.
+
+In local mode, all slicing is done stand alone. 
+
 Это приложение для нарезки тайлов растровых карт 256х256 пикселей.
 
 Поддерживает локальный и сетевой режимы:
@@ -16,3 +29,13 @@ Mapnik Tile Render to render 256x256pixel map tiles in server-clients mode with 
 использовать в ночное время, когда большинство рабочих компьютеров офиса простаивают.
 
 В локальном режиме вся нарезка выполняется одним приложнием.
+
+<img src="window1.png"/>
+<img src="window2.png"/>
+<img src="window3.png"/>
+<img src="window4.png"/>
+<img src="window5.png"/>
+<img src="window6.png"/>
+<img src="window7.png"/>
+<img src="window8.png"/>
+<img src="window9.png"/>
