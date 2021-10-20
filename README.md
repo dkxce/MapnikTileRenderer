@@ -30,12 +30,19 @@ In local mode, all slicing is done stand alone.
 
 В локальном режиме вся нарезка выполняется одним приложнием.
 
+Main Window:    
 <img src="window1.png"/>
-<img src="window2.png"/>
-<img src="window3.png"/>
-<img src="window4.png"/>
+<img src="window2.png"/>      
+Map Preview Window:    
+<img src="window3.png"/>     
+Tiles View Window:    
+<img src="window4.png"/>     
+Stand Alone Process:    
 <img src="window5.png"/>
-<img src="window6.png"/>
-<img src="window7.png"/>
-<img src="window8.png"/>
-<img src="window9.png"/>
+<img src="window6.png"/>    
+Console Process:    
+<img src="window7.png"/>    
+Server Process:    
+<img src="window8.png"/>     
+Client Process:    
+<img src="window9.png"/>    
