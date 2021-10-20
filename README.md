@@ -46,3 +46,13 @@ Server Process:
 <img src="window8.png"/>     
 Client Process:    
 <img src="window9.png"/>    
+Process Info:    
+<img src="windowA.png"/>   
+Coverage Status:     
+<img src="windowB.png"/>   
+Web Status:     
+<img src="windowC.png"/>   
+Web Coverage Status    
+<img src="windowD.png"/>   
+Overall Server Status:   
+<img src="windowE.png"/>   
